@@ -6,8 +6,7 @@
 4. [x] antd 按需加载能力
 5. [x] 引入 react-router
 6. [ ] 做出主架子
-
-![截图](/screenshots/main-layout.png) 主架子参考图
+       ![截图](/screenshots/main-layout.png) 主架子参考图
 
 ## 项目依赖指南
 
