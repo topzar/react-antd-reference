@@ -1,3 +1,19 @@
+## 项目依赖指南
+
+1. 高级配置
+
+   > 不在 eject 的前提下修改 cra 默认配置
+
+   ```
+   $ yarn add react-app-rewired customize-cra
+   ```
+
+2. ui 库 antd
+
+   ```
+   $ yarn add antd
+   ```
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
