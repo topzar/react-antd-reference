@@ -1,18 +1,29 @@
+## 目标
+
+- [x] 实现简单的 hello world
+- [x] 接入 ui 框架 antd
+- [x] 无需 eject 的前提下能修改 cra 默认配置的修改能力
+- [x] antd 按需加载能力
+- [x] 引入 react-router
+- [ ] 做出主架子
+
 ## 项目依赖指南
 
-1. 高级配置
+> 最新的在顶部
 
-   > 不在 eject 的前提下修改 cra 默认配置
+- ui 库 antd
 
-   ```
-   $ yarn add react-app-rewired customize-cra
-   ```
+  ```
+  $ yarn add antd
+  ```
 
-2. ui 库 antd
+- 高级配置
 
-   ```
-   $ yarn add antd
-   ```
+  > 不在 eject 的前提下修改 cra 默认配置
+
+  ```
+  $ yarn add react-app-rewired customize-cra
+  ```
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
