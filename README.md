@@ -24,9 +24,11 @@
 
   ```
   $ yarn add react-app-rewired customize-cra
+  $ yarn add babel-plugin-import
   ```
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  > 按照 antd 官方的配置指南做的配置,可以参考一下链接
+  > 高级配置 [高级配置](https://ant.design/docs/react/use-with-create-react-app-cn#%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE)
 
 ## Available Scripts
 
