@@ -1,11 +1,13 @@
 ## 目标
 
-- [x] 实现简单的 hello world
-- [x] 接入 ui 框架 antd
-- [x] 无需 eject 的前提下能修改 cra 默认配置的修改能力
-- [x] antd 按需加载能力
-- [x] 引入 react-router
-- [ ] 做出主架子
+1. [x] 实现简单的 hello world
+2. [x] 接入 ui 框架 antd
+3. [x] 无需 eject 的前提下能修改 cra 默认配置的修改能力
+4. [x] antd 按需加载能力
+5. [x] 引入 react-router
+6. [ ] 做出主架子
+
+![截图](/screenshots/main-layout.png) 主架子参考图
 
 ## 项目依赖指南
 
