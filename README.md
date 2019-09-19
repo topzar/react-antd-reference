@@ -5,8 +5,9 @@
 3. [x] 无需 eject 的前提下能修改 cra 默认配置的修改能力
 4. [x] antd 按需加载能力
 5. [x] 引入 react-router
-6. [ ] 做出主架子
+6. [x] 做出主架子
        ![截图](/screenshots/main-layout.png) 主架子参考图
+7. [ ] 逐步完善主架子，新增菜单和核心路由
 
 ## 项目依赖指南
 
@@ -29,6 +30,14 @@
 
   > 按照 antd 官方的配置指南做的配置,可以参考一下链接
   > 高级配置 [高级配置](https://ant.design/docs/react/use-with-create-react-app-cn#%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE)
+
+- 路由
+
+  ```
+  $ yarn add react-router-dom
+  ```
+
+  > react-router 官网 [react-router](https://reacttraining.com/react-router/web/guides/quick-start)
 
 ## Available Scripts
 
