@@ -1,3 +1,5 @@
+> 项目以 issue 的方式管理计划，进度同步。
+
 ## 目标
 
 1. [x] 实现简单的 hello world
@@ -6,7 +8,6 @@
 4. [x] antd 按需加载能力
 5. [x] 引入 react-router
 6. [x] 做出主架子
-       ![截图](/screenshots/main-layout.png) 主架子参考图
 7. [ ] 逐步完善主架子，新增菜单和核心路由
 
 ## 项目依赖指南
