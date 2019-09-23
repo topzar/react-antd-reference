@@ -11,7 +11,7 @@ function LeftNav() {
         <Menu.Item key="1">
           <Icon type="user" />
           <span>
-            <Link to="/">主页</Link>
+            <Link to="/demo1">demo 1</Link>
           </span>
         </Menu.Item>
         <Menu.Item key="2">
