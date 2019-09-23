@@ -1,43 +1,40 @@
-@red: #f00;
-@a: 100px;
-@b: 200px;
-@c: @a + @b + 2px;
-
-.header {
-  width: 200px+10px;
-  background: @red;
-}
-
 .mainLayout {
   background: red;
 
-  .trigger {
-    font-size: 18px;
-    line-height: 64px;
-    padding: 0 24px;
-    cursor: pointer;
-    transition: color 0.3s;
 
-    &:hover {
-      color: #1890ff;
-    }
-  }
-
-  .logo {
-    height: 32px;
-    background: rgba(255, 255, 255, 0.2);
-    margin: 16px;
-  }
 
   .main-frame {
     margin-left: 200px;
     height: 100vh;
     transition: all 0.2s;
 
-    // .header {
-    //     width: @c;
-    //     background: @red;
-    // }
+    .head-wrapper {
+      background: #fff;
+      padding: 0;
+      display: flex;
+      flex-direction: row nowrap;
+
+      .trigger {
+        font-size: 18px;
+        line-height: 64px;
+        padding: 0 24px;
+        cursor: pointer;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #1890ff;
+        }
+      }
+
+      .header-area {
+        flex-grow: 1;
+      }
+
+      .main-content {
+        margin: 24px 16px 0;
+        overflow: initial;
+      }
+    }
   }
 
   .left-nav {
@@ -45,14 +42,16 @@
     height: 100vh;
     position: fixed;
     left: 0;
+
+    .logo {
+      height: 32px;
+      background: rgba(255, 255, 255, 0.2);
+      margin: 16px;
+    }
+
+    &-collapsed {
+      margin-left: 80px;
+    }
   }
 
-  .left-nav-collapsed {
-    margin-left: 80px;
-  }
-
-  .main-content {
-    margin: 24px 16px 0;
-    overflow: initial;
-  }
 }

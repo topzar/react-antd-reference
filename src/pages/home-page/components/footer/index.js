@@ -1,7 +1,12 @@
 import React from "react";
+import { Card } from "antd";
 
 function Footer() {
-  return <h1 style={{ color: "#fff" }}>hello Footer</h1>;
+  return (
+    <Card style={{ background: "#ccc" }}>
+      <h1 style={{ color: "#000" }}>hello Footer</h1>
+    </Card>
+  );
 }
 
 export default Footer;

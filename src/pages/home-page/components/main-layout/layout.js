@@ -30,13 +30,13 @@ export default function MainLayout(props) {
           </span>
         </Sider>
         <Layout className={`main-frame ${collapsed && "left-nav-collapsed"}`}>
-          <Header style={{ background: "#fff", padding: 0 }}>
+          <Header className="head-wrapper">
             <Icon
               className="trigger"
               type={collapsed ? "menu-unfold" : "menu-fold"}
               onClick={event => setCollapsed(!collapsed)}
             />
-            <div className="header">
+            <div className="header-area">
               {/* 这里需要传递header 组件 */}
               {props.header}
             </div>
@@ -45,7 +45,7 @@ export default function MainLayout(props) {
             {/* 这里需要传递mainFrame 组件，填充右侧内容区域的组件 */}
             {props.mainFrame}
           </Content>
-          <Footer style={{ textAlign: "center" }}>
+          <Footer style={{ textAlign: "center", padding: "0px" }}>
             {/* 这里需要传递footer 组件,可选 */}
             {props.footer}
           </Footer>
