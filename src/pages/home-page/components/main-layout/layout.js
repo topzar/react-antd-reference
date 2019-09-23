@@ -6,6 +6,8 @@ import "./layout.less";
 const { Header, Content, Footer, Sider } = Layout;
 
 export default function MainLayout(props) {
+  const children = props.children;
+
   const [collapsed, setCollapsed] = useState(false);
 
   return (
@@ -17,17 +19,8 @@ export default function MainLayout(props) {
           collapsible
           collapsed={collapsed}
         >
-          <span
-            style={{
-              textAlign: "center",
-              display: "block",
-              lineHeight: "100px",
-              color: "#fff"
-            }}
-          >
-            {/* 这里需要传递左侧菜单 leftNav 组件 */}
-            {props.leftNav}
-          </span>
+          {/* 这里需要传递左侧菜单 leftNav 组件 */}
+          {props.leftNav}
         </Sider>
         <Layout className={`main-frame ${collapsed && "left-nav-collapsed"}`}>
           <Header className="head-wrapper">
@@ -43,7 +36,7 @@ export default function MainLayout(props) {
           </Header>
           <Content className="main-content">
             {/* 这里需要传递mainFrame 组件，填充右侧内容区域的组件 */}
-            {props.mainFrame}
+            {children}
           </Content>
           <Footer style={{ textAlign: "center", padding: "0px" }}>
             {/* 这里需要传递footer 组件,可选 */}
@@ -59,6 +52,6 @@ export default function MainLayout(props) {
 MainLayout.propTypes = {
   leftNav: PropTypes.node.isRequired,
   header: PropTypes.node.isRequired,
-  mainFrame: PropTypes.node.isRequired,
+  children: PropTypes.element.isRequired,
   footer: PropTypes.node
 };
