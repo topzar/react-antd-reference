@@ -1,39 +1,58 @@
-.mainLayout .trigger {
+@red: #f00;
+@a: 100px;
+@b: 200px;
+@c: @a + @b + 2px;
+
+.header {
+  width: 200px+10px;
+  background: @red;
+}
+
+.mainLayout {
+  background: red;
+
+  .trigger {
     font-size: 18px;
     line-height: 64px;
     padding: 0 24px;
     cursor: pointer;
     transition: color 0.3s;
-}
 
-.mainLayout .trigger:hover {
-    color: #1890ff;
-}
+    &:hover {
+      color: #1890ff;
+    }
+  }
 
-.mainLayout .logo {
+  .logo {
     height: 32px;
     background: rgba(255, 255, 255, 0.2);
     margin: 16px;
-}
+  }
 
-.mainLayout .main-frame {
+  .main-frame {
     margin-left: 200px;
     height: 100vh;
     transition: all 0.2s;
-}
 
-.mainLayout .left-nav {
+    // .header {
+    //     width: @c;
+    //     background: @red;
+    // }
+  }
+
+  .left-nav {
     overflow: auto;
     height: 100vh;
     position: fixed;
     left: 0;
-}
+  }
 
-.mainLayout .left-nav-collapsed {
+  .left-nav-collapsed {
     margin-left: 80px;
-}
+  }
 
-.mainLayout .main-content {
+  .main-content {
     margin: 24px 16px 0;
     overflow: initial;
+  }
 }

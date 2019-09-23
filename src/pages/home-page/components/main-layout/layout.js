@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Layout, Icon, Card } from "antd";
+import { Layout, Icon } from "antd";
 import PropTypes from "prop-types";
-import "./layout.css";
+import "./layout.less";
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -36,14 +36,14 @@ export default function MainLayout(props) {
               type={collapsed ? "menu-unfold" : "menu-fold"}
               onClick={event => setCollapsed(!collapsed)}
             />
-            {/* 这里需要传递header 组件 */}
-            {props.header}
+            <div className="header">
+              {/* 这里需要传递header 组件 */}
+              {props.header}
+            </div>
           </Header>
           <Content className="main-content">
-            <Card style={{ height: "100%" }}>
-              {/* 这里需要传递mainFrame 组件，填充右侧内容区域的组件 */}
-              {props.mainFrame}
-            </Card>
+            {/* 这里需要传递mainFrame 组件，填充右侧内容区域的组件 */}
+            {props.mainFrame}
           </Content>
           <Footer style={{ textAlign: "center" }}>
             {/* 这里需要传递footer 组件,可选 */}
