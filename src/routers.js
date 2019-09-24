@@ -7,6 +7,8 @@ import HomePage from "./pages/home-page";
 
 import MenuDemo from "./pages/menu-demo";
 
+import PaginationDemo from "./pages/pagination/";
+
 export default function Routers() {
   return (
     <div className="main">
@@ -17,6 +19,7 @@ export default function Routers() {
             <HomePage>
               <Card style={{ height: "100%" }}>
                 <Route path="/menu-demo" component={MenuDemo} />
+                <Route path="/pagination" component={PaginationDemo} />
               </Card>
             </HomePage>
           );

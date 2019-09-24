@@ -169,7 +169,6 @@ function MenuDemo3(props) {
         defaultOpenKeys={["sub1"]}
         mode={lineMode ? "inline" : "vertical"}
         theme={lightTheme ? "light" : "dark"}
-        inlineCollapsed={collapsed}
       >
         <Menu.Item key="1">
           <Icon type="pie-chart" />

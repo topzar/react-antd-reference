@@ -15,6 +15,12 @@ function LeftNav() {
             <Link to="/menu-demo">菜单展示页</Link>
           </span>
         </Menu.Item>
+        <Menu.Item key="2">
+          <Icon type="ordered-list" />
+          <span>
+            <Link to="/pagination">分页</Link>
+          </span>
+        </Menu.Item>
       </Menu>
     </div>
   );
