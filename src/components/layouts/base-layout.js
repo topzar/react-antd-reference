@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Layout } from "antd";
+
+import { connect } from "react-redux";
 
 import "./base-layout.less";
 
@@ -9,19 +11,15 @@ import CustomFooter from "../footer";
 
 const { Header, Content, Footer, Sider } = Layout;
 
-export default function BaseLayout(props) {
-  const [collapsed, setCollapsed] = useState(false);
-
+function BaseLayout(props) {
   return (
     <Layout className="full-container">
-      <Sider className="sider" collapsed={collapsed}>
+      <Sider className="sider" collapsed={props.collapsed}>
         <LeftNav />
       </Sider>
       <Layout className="main-frame">
         <Header style={{ padding: "0px" }}>
-          <CustomHeader
-            handleTriggerClick={event => setCollapsed(!collapsed)}
-          />
+          <CustomHeader />
         </Header>
         <Content className="content">
           <div className="content-container">{props.children}</div>
@@ -33,3 +31,10 @@ export default function BaseLayout(props) {
     </Layout>
   );
 }
+
+const mapStateToProps = state => {
+  return {
+    collapsed: state.collapsedMenu
+  };
+};
+export default connect(mapStateToProps)(BaseLayout);
