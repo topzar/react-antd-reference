@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Layout } from "antd";
 
 import "./base-layout.less";
@@ -10,14 +10,18 @@ import CustomFooter from "../footer";
 const { Header, Content, Footer, Sider } = Layout;
 
 export default function BaseLayout(props) {
+  const [collapsed, setCollapsed] = useState(false);
+
   return (
     <Layout className="full-container">
-      <Sider className="sider">
+      <Sider className="sider" collapsed={collapsed}>
         <LeftNav />
       </Sider>
       <Layout className="main-frame">
-        <Header className="header">
-          <CustomHeader />
+        <Header style={{ padding: "0px" }}>
+          <CustomHeader
+            handleTriggerClick={event => setCollapsed(!collapsed)}
+          />
         </Header>
         <Content className="content">
           <div className="content-container">{props.children}</div>
