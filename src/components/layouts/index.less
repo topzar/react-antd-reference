@@ -1,16 +1,24 @@
-.base-layout {
+.full-container {
     min-height: 100vh;
     color: #fff;
     text-align: center;
 
-    .main-layout {
+    .sider {
+        .logo {
+            height: 32px;
+            background: rgba(255, 255, 255, 0.2);
+            margin: 16px;
+        }
+    }
+
+    .main-frame {
         .header {
             background: #fff;
             padding: 0;
             color: #000;
         }
 
-        .container {
+        .content {
             min-height: 500px;
             margin: 10px 16px;
             background: #ccc;
@@ -19,14 +27,13 @@
             align-items: stretch;
             flex: 1;
 
-            .content {
+            &-container {
                 width: 100%;
                 padding: 24;
                 background: #fff;
                 color: #000;
             }
         }
-
 
         .footer {
             height: 40px;
