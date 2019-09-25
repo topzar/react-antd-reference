@@ -1,0 +1,31 @@
+.full-container {
+    min-height: 100vh;
+    min-width: 1000px;
+    color: #fff;
+
+    .main-frame {
+        text-align: center;
+
+        .content {
+            min-height: 500px;
+            margin: 10px 16px;
+            background: #ccc;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: stretch;
+            flex: 1;
+
+            &-container {
+                width: 100%;
+                background: #fff;
+                color: #000;
+            }
+        }
+
+        .footer {
+            height: 40px;
+            line-height: 40px;
+            padding: 0px;
+        }
+    }
+}

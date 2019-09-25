@@ -1,0 +1,26 @@
+.header-wrapper {
+    background: #fff;
+    padding: 0px;
+    color: #000;
+    display: flex;
+    flex-flow: row nowrap;
+    flex: 1;
+
+    .left-icon {
+        .trigger {
+            font-size: 18px;
+            line-height: 64px;
+            padding: 0 24px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .trigger:hover {
+            color: #1890ff;
+        }
+    }
+
+    &-content {
+        flex-grow: 1;
+    }
+}
