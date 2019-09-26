@@ -1,22 +1,21 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-
+import React from "react";
 import { Icon } from "antd";
+import { connect } from "react-redux";
 
 import "./index.less";
 
-function Header(props) {
-  const [collapsed, setCollapsed] = useState(false);
+import { menuActions } from "../../store/menu/index";
 
+function Header(props) {
+  console.log("变量信息->: Header -> props", props);
   return (
     <div className="header-wrapper">
       <div className="left-icon">
         <Icon
           className="trigger"
-          type={collapsed ? "menu-unfold" : "menu-fold"}
+          type={props.collapsed ? "menu-unfold" : "menu-fold"}
           onClick={event => {
-            setCollapsed(!collapsed);
-            props.handleTriggerClick && props.handleTriggerClick(event);
+            props.collapsedMenu();
           }}
         />
       </div>
@@ -24,8 +23,24 @@ function Header(props) {
     </div>
   );
 }
-Header.propTypes = {
-  handleTriggerClick: PropTypes.func
+const mapStateToProps = state => {
+  return {
+    collapsed: state.collapsedMenu
+  };
 };
-
-export default Header;
+//第一种写法
+const mapDispatchToProps = {
+  collapsedMenu: menuActions.collapsedMenu
+};
+//第二种写法
+// const mapDispatchToProps = {
+//   collapsedMenu: () => {
+//     return (dispatch, getState) => {
+//       dispatch(menuActions.collapsedMenu());
+//     };
+//   }
+// };
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Header);
