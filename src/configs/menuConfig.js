@@ -8,41 +8,41 @@ export const menuList = [
   },
   {
     title: "UI",
-    key: "/ui",
+    key: "/home/ui",
     is_open: true,
     icon: "compass",
     children: [
       {
         title: "按钮",
-        key: "/ui/buttons"
+        key: "/home/ui/buttons"
       },
       {
         title: "弹框",
-        key: "/ui/modals"
+        key: "/home/ui/modals"
       },
       {
         title: "Loading",
-        key: "/ui/loadings"
+        key: "/home/ui/loadings"
       },
       {
         title: "通知提醒",
-        key: "/ui/notification"
+        key: "/home/ui/notification"
       },
       {
         title: "全局Message",
-        key: "/ui/messages"
+        key: "/home/ui/messages"
       },
       {
         title: "Tab页签",
-        key: "/ui/tabs"
+        key: "/home/ui/tabs"
       },
       {
         title: "图片画廊",
-        key: "/ui/gallery"
+        key: "/home/ui/gallery"
       },
       {
         title: "轮播图",
-        key: "/ui/carousel"
+        key: "/home/ui/carousel"
       }
     ]
   }
