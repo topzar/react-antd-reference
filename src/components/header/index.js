@@ -4,10 +4,9 @@ import { connect } from "react-redux";
 
 import "./index.less";
 
-import { menuActions } from "../../store/menu/index";
+import { menuActions } from "@store/menu/index";
 
 function Header(props) {
-  console.log("变量信息->: Header -> props", props);
   return (
     <div className="header-wrapper">
       <div className="left-icon">
