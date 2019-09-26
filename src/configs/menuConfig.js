@@ -9,7 +9,7 @@ export const menuList = [
   {
     title: "UI",
     key: "/home/ui",
-    is_open: true,
+    is_open: false,
     icon: "compass",
     children: [
       {
@@ -43,6 +43,22 @@ export const menuList = [
       {
         title: "轮播图",
         key: "/home/ui/carousel"
+      }
+    ]
+  },
+  {
+    title: "Demo",
+    key: "/home/Demo",
+    is_open: true,
+    icon: "compass",
+    children: [
+      {
+        title: "demo1",
+        key: "/home/demo1"
+      },
+      {
+        title: "demo2",
+        key: "/home/demo2"
       }
     ]
   }

@@ -3,9 +3,11 @@ import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 
 import HomeDefault from "@pages/home/default";
 import HomePage from "@pages/home";
-import Demo from "@pages/demo";
 import Page404 from "@pages/404";
 import LoginPage from "@pages/login";
+
+import Demo1 from "@pages/demo/demo1";
+import Demo2 from "@pages/demo/demo2";
 
 // 当用户访问的是 / 的时候，登陆过的重定向到/home下，否则/login下
 function Guard() {
@@ -18,7 +20,8 @@ function MainFrame({ match }) {
     <HomePage>
       <Switch>
         <Route exact path={`${match.path}`} component={HomeDefault} />
-        <Route path={`${match.path}/demo`} component={Demo} />
+        <Route path={`${match.path}/demo1`} component={Demo1} />
+        <Route path={`${match.path}/demo2`} component={Demo2} />
         <Route exact path="*" component={Page404} />
       </Switch>
     </HomePage>
