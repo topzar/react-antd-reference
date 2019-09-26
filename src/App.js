@@ -1,6 +1,7 @@
 import React from "react";
 
-import HomePage from "./pages/home";
+// import HomePage from "./pages/home";
+import HomePage from "@pages/home";
 function App() {
   return (
     <div className="App">

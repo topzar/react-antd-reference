@@ -5,9 +5,9 @@ import { connect } from "react-redux";
 
 import "./base-layout.less";
 
-import LeftNav from "../left-nav";
-import CustomHeader from "../header";
-import CustomFooter from "../footer";
+import LeftNav from "@components/left-nav";
+import CustomHeader from "@components/header";
+import CustomFooter from "@components/footer";
 
 const { Header, Content, Footer, Sider } = Layout;
 
