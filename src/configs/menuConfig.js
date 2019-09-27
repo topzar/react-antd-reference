@@ -14,7 +14,8 @@ export const menuList = [
     children: [
       {
         title: "按钮",
-        key: "/home/ui/buttons"
+        key: "/home/ui/buttons",
+        icon: "border"
       },
       {
         title: "Loading",
@@ -24,29 +25,35 @@ export const menuList = [
         children: [
           {
             title: "icon 加载中",
-            key: "/home/ui/loadings/icon"
+            key: "/home/ui/loadings/icon",
+            icon: "loading"
           },
           {
             title: "button 加载中",
-            key: "/home/ui/loadings/button"
+            key: "/home/ui/loadings/button",
+            icon: "border"
           },
           {
             title: "Spin 加载中",
-            key: "/home/ui/loadings/spin"
+            key: "/home/ui/loadings/spin",
+            icon: "redo"
           },
           {
-            title: "Message 加载中",
-            key: "/home/ui/loadings/message"
+            title: "Message 提示",
+            key: "/home/ui/loadings/message",
+            icon: "message"
           }
         ]
       },
       {
         title: "通知提醒",
-        key: "/home/ui/notification"
+        key: "/home/ui/notification",
+        icon: "notification"
       },
       {
         title: "全局Message",
-        key: "/home/ui/messages"
+        key: "/home/ui/messages",
+        icon: "message"
       },
       {
         title: "弹框",
