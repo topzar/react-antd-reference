@@ -8,17 +8,18 @@ import { menuActions } from "@store/menu/index";
 
 function Header(props) {
   return (
-    <div className="header-wrapper">
-      <div className="left-icon">
+    <div className="global-header">
+      <span className="global-header-trigger">
         <Icon
-          className="trigger"
           type={props.collapsed ? "menu-unfold" : "menu-fold"}
           onClick={event => {
             props.collapsedMenu();
           }}
         />
+      </span>
+      <div className="global-header-index-right">
+        <span>hello</span>
       </div>
-      <div className="header-wrapper-content">other content</div>
     </div>
   );
 }

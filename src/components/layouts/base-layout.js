@@ -13,17 +13,15 @@ const { Header, Content, Footer, Sider } = Layout;
 
 function BaseLayout(props) {
   return (
-    <Layout className="full-container">
-      <Sider className="sider" collapsed={props.collapsed}>
+    <Layout className="top-container">
+      <Sider collapsed={props.collapsed} className="top-container-sider">
         <LeftNav />
       </Sider>
       <Layout className="main-frame">
-        <Header style={{ padding: "0px" }}>
+        <Header className="main-frame-header">
           <CustomHeader />
         </Header>
-        <Content className="content">
-          <div className="content-container">{props.children}</div>
-        </Content>
+        <Content className="main-frame-content">{props.children}</Content>
         <Footer className="footer">
           <CustomFooter />
         </Footer>
