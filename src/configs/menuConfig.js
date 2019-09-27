@@ -27,16 +27,16 @@ export const menuList = [
             key: "/home/ui/loadings/icon"
           },
           {
+            title: "button 加载中",
+            key: "/home/ui/loadings/button"
+          },
+          {
             title: "Spin 加载中",
             key: "/home/ui/loadings/spin"
           },
           {
             title: "Message 加载中",
             key: "/home/ui/loadings/message"
-          },
-          {
-            title: "button 加载中",
-            key: "/home/ui/loadings/button"
           }
         ]
       },
@@ -70,7 +70,7 @@ export const menuList = [
     title: "Demo",
     key: "/home/Demo",
     is_open: true,
-    icon: "compass",
+    icon: "smile",
     children: [
       {
         title: "demo1",
