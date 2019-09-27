@@ -9,7 +9,7 @@ export const menuList = [
   {
     title: "UI",
     key: "/home/ui",
-    is_open: false,
+    is_open: true,
     icon: "compass",
     children: [
       {
@@ -49,7 +49,7 @@ export const menuList = [
   {
     title: "Demo",
     key: "/home/Demo",
-    is_open: true,
+    is_open: false,
     icon: "compass",
     children: [
       {

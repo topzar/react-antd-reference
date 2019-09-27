@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Skeleton, List, Avatar, Icon } from "antd";
+import { Skeleton, List, Avatar, Icon, Card } from "antd";
 
 const listData = [];
 for (let i = 0; i < 3; i++) {
@@ -40,7 +40,7 @@ class DefaultPage extends React.Component {
     const { loading } = this.state;
 
     return (
-      <div>
+      <Card>
         {/* <Switch checked={!loading} onChange={this.onChange} /> */}
 
         <List
@@ -78,7 +78,7 @@ class DefaultPage extends React.Component {
             </List.Item>
           )}
         />
-      </div>
+      </Card>
     );
   }
 }
