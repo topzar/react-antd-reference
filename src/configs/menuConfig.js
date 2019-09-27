@@ -45,12 +45,12 @@ export const menuList = [
         key: "/home/ui/notification"
       },
       {
-        title: "弹框",
-        key: "/home/ui/modals"
-      },
-      {
         title: "全局Message",
         key: "/home/ui/messages"
+      },
+      {
+        title: "弹框",
+        key: "/home/ui/modals"
       },
       {
         title: "Tab页签",

@@ -15,6 +15,8 @@ import LoadingMessage from "@pages/ui/loadings/message";
 
 // notification
 import NotificationPage from "@pages/ui/notification";
+//messages
+import MessagesPage from "@pages/ui/messages";
 
 import Demo1 from "@pages/demo/demo1";
 import Demo2 from "@pages/demo/demo2";
@@ -52,6 +54,7 @@ function MainFrame({ match }) {
           path={`${match.path}/ui/notification`}
           component={NotificationPage}
         />
+        <Route path={`${match.path}/ui/messages`} component={MessagesPage} />
 
         <Route path={`${match.path}/demo1`} component={Demo1} />
         <Route path={`${match.path}/demo2`} component={Demo2} />
