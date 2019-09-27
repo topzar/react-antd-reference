@@ -1,26 +1,25 @@
-.header-wrapper {
+.global-header {
+    position: relative;
+    height: 64px;
+    padding: 0;
     background: #fff;
-    padding: 0px;
-    color: #000;
-    display: flex;
-    flex-flow: row nowrap;
-    flex: 1;
+    box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
 
-    .left-icon {
-        .trigger {
-            font-size: 18px;
-            line-height: 64px;
-            padding: 0 24px;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-
-        .trigger:hover {
-            color: #1890ff;
-        }
+    &-trigger {
+        height: 64px;
+        padding: 19px 24px;
+        font-size: 20px;
+        cursor: pointer;
+        transition: all .3s, padding 0s;
     }
 
-    &-content {
-        flex-grow: 1;
+    &-trigger:hover {
+        background: #fff;
+    }
+
+    &-index-right {
+        float: right;
+        height: 100%;
+        overflow: hidden;
     }
 }

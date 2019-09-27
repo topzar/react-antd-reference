@@ -1,25 +1,25 @@
-.full-container {
+.top-container {
     min-height: 100vh;
-    min-width: 1000px;
-    color: #fff;
+
+    &-sider {
+        position: relative;
+        z-index: 10;
+        min-height: 100vh;
+        box-shadow: 2px 0 6px rgba(0, 21, 41, .35);
+    }
 
     .main-frame {
-        .content {
-            min-height: 500px;
-            // margin: 10px 16px;
-            // background: #ccc;
-            display: flex;
-            flex-flow: row nowrap;
-            align-items: stretch;
-            flex: 1;
+        min-height: 100vh;
 
-            &-container {
-                box-sizing: border-box;
-                width: 100%;
-                padding: 20px;
-                background: #f5f5f5;
-                color: #000;
-            }
+        &-header {
+            padding: 0px;
+            width: 100%;
+            z-index: 2;
+        }
+
+        &-content {
+            padding-top: 0px;
+            margin: 24px;
         }
 
         .footer {

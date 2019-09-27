@@ -69,7 +69,7 @@ export const menuList = [
   {
     title: "Demo",
     key: "/home/Demo",
-    is_open: false,
+    is_open: true,
     icon: "compass",
     children: [
       {
@@ -79,6 +79,10 @@ export const menuList = [
       {
         title: "demo2",
         key: "/home/demo2"
+      },
+      {
+        title: "antdPro 的 Header",
+        key: "/home/antd-pro-header"
       }
     ]
   }

@@ -9,7 +9,7 @@ export default function ButtonsPage() {
   const [size, setSize] = useState("default");
 
   return (
-    <div>
+    <>
       <Card title="基础按钮" className="card-wrap">
         <Button type="primary">Primary</Button>
         <Button>Default</Button>
@@ -113,6 +113,6 @@ export default function ButtonsPage() {
           Primary
         </Button>
       </Card>
-    </div>
+    </>
   );
 }
