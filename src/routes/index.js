@@ -11,7 +11,7 @@ import ButtonsPage from "@pages/ui/buttons";
 
 import Demo1 from "@pages/demo/demo1";
 import Demo2 from "@pages/demo/demo2";
-
+import AntdProHeaderRightIndex from "@pages/demo/antd-pro-header";
 // 当用户访问的是 / 的时候，登陆过的重定向到/home下，否则/login下
 function Guard() {
   return true ? <Redirect push to="/home" /> : <Redirect push to="/login" />;
@@ -26,6 +26,11 @@ function MainFrame({ match }) {
         <Route path={`${match.path}/ui/buttons`} component={ButtonsPage} />
         <Route path={`${match.path}/demo1`} component={Demo1} />
         <Route path={`${match.path}/demo2`} component={Demo2} />
+        <Route
+          path={`${match.path}/antd-pro-header`}
+          component={AntdProHeaderRightIndex}
+        />
+
         <Route exact path="*" component={Page404} />
       </Switch>
     </HomePage>

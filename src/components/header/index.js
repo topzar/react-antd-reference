@@ -1,5 +1,5 @@
 import React from "react";
-import { Icon } from "antd";
+import { Icon, Avatar } from "antd";
 import { connect } from "react-redux";
 
 import "./index.less";
@@ -18,7 +18,24 @@ function Header(props) {
         />
       </span>
       <div className="global-header-index-right">
-        <span>hello</span>
+        <div className="antd-pro-header">
+          <span>
+            <Icon type="search" />
+          </span>
+          <span>
+            <Icon type="question-circle" />
+          </span>
+          <span>
+            <Icon type="bell" />
+          </span>
+          <span>
+            <Avatar icon="user" size="small" style={{ padding: "0px" }} />
+            <span>SilvaQ</span>
+          </span>
+          <span>
+            <Icon type="global" />
+          </span>
+        </div>
       </div>
     </div>
   );
