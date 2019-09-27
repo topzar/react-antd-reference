@@ -9,7 +9,7 @@ export const menuList = [
   {
     title: "UI",
     key: "/home/ui",
-    is_open: false,
+    is_open: true,
     icon: "compass",
     children: [
       {
@@ -17,16 +17,36 @@ export const menuList = [
         key: "/home/ui/buttons"
       },
       {
-        title: "弹框",
-        key: "/home/ui/modals"
-      },
-      {
         title: "Loading",
-        key: "/home/ui/loadings"
+        key: "/home/ui/loadings",
+        icon: "loading-3-quarters",
+        is_open: true,
+        children: [
+          {
+            title: "icon 加载中",
+            key: "/home/ui/loadings/icon"
+          },
+          {
+            title: "Spin 加载中",
+            key: "/home/ui/loadings/spin"
+          },
+          {
+            title: "Message 加载中",
+            key: "/home/ui/loadings/message"
+          },
+          {
+            title: "button 加载中",
+            key: "/home/ui/loadings/button"
+          }
+        ]
       },
       {
         title: "通知提醒",
         key: "/home/ui/notification"
+      },
+      {
+        title: "弹框",
+        key: "/home/ui/modals"
       },
       {
         title: "全局Message",
@@ -49,7 +69,7 @@ export const menuList = [
   {
     title: "Demo",
     key: "/home/Demo",
-    is_open: true,
+    is_open: false,
     icon: "compass",
     children: [
       {

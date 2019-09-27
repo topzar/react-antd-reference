@@ -6,6 +6,9 @@ import HomePage from "@pages/home";
 import Page404 from "@pages/404";
 import LoginPage from "@pages/login";
 
+//  pages/ui/
+import ButtonsPage from "@pages/ui/buttons";
+
 import Demo1 from "@pages/demo/demo1";
 import Demo2 from "@pages/demo/demo2";
 
@@ -20,6 +23,7 @@ function MainFrame({ match }) {
     <HomePage>
       <Switch>
         <Route exact path={`${match.path}`} component={HomeDefault} />
+        <Route path={`${match.path}/ui/buttons`} component={ButtonsPage} />
         <Route path={`${match.path}/demo1`} component={Demo1} />
         <Route path={`${match.path}/demo2`} component={Demo2} />
         <Route exact path="*" component={Page404} />
