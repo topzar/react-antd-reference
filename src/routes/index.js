@@ -13,6 +13,9 @@ import LoadingButton from "@pages/ui/loadings/button";
 import LoadingSpin from "@pages/ui/loadings/spin";
 import LoadingMessage from "@pages/ui/loadings/message";
 
+// notification
+import NotificationPage from "@pages/ui/notification";
+
 import Demo1 from "@pages/demo/demo1";
 import Demo2 from "@pages/demo/demo2";
 
@@ -44,6 +47,10 @@ function MainFrame({ match }) {
         <Route
           path={`${match.path}/ui/loadings/message`}
           component={LoadingMessage}
+        />
+        <Route
+          path={`${match.path}/ui/notification`}
+          component={NotificationPage}
         />
 
         <Route path={`${match.path}/demo1`} component={Demo1} />
