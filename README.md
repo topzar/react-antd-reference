@@ -49,3 +49,7 @@
    ```
    yarn run build // npm run build
    ```
+
+# 效果图
+
+![](react-reference-demo-thumb.png)
