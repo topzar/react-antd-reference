@@ -34,7 +34,7 @@ export default function LeftNav() {
           <SubMenu
             title={
               <span>
-                {item.icon ? <Icon type="appstore" /> : <></>}
+                {item.icon && <Icon type={item.icon} />}
                 <span>{item.title}</span>
               </span>
             }
