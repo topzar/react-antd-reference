@@ -57,7 +57,8 @@ export const menuList = [
       },
       {
         title: "弹框",
-        key: "/home/ui/modals"
+        key: "/home/ui/modals",
+        icon: "windows"
       },
       {
         title: "Tab页签",

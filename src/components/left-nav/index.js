@@ -1,61 +1,19 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import { Menu, Icon } from "antd";
+import React, { useMemo } from "react";
+import { Menu } from "antd";
 
 import "./index.less";
 
 import { menuList, menuConfig } from "@configs/menuConfig";
 
-const { SubMenu } = Menu;
+import MenuItemsHandler from "@utils/menu/menu-items-handler";
+import MenuRenderHandler from "@utils/menu/menu-render-handler";
 
 export default function LeftNav() {
-  function menuDefaultSelectedKeys(data) {
-    return data
-      .filter(item => {
-        return item.is_selected;
-      })
-      .map(item => {
-        return item.key;
-      });
-  }
-  function menuDefaultOpenKeys(data) {
-    return data
-      .filter(item => {
-        return item.is_open;
-      })
-      .map(item => {
-        return item.key;
-      });
-  }
-  function renderMenu(data) {
-    return data.map(item => {
-      if (item.children) {
-        return (
-          <SubMenu
-            title={
-              <span>
-                {item.icon && <Icon type={item.icon} />}
-                <span>{item.title}</span>
-              </span>
-            }
-            key={item.key}
-          >
-            {renderMenu(item.children)}
-          </SubMenu>
-        );
-      }
-      return (
-        <Menu.Item title={item.title} key={item.key}>
-          <NavLink to={item.key}>
-            <span>
-              {item.icon && <Icon type={item.icon} />}
-              <span>{item.title}</span>
-            </span>
-          </NavLink>
-        </Menu.Item>
-      );
-    });
-  }
+  const { menuDefaultOpenKeys, menuDefaultSelectedKeys } = useMemo(
+    () => MenuItemsHandler(menuList),
+    []
+  );
+  const renderedMenu = useMemo(() => MenuRenderHandler(menuList), []);
 
   return (
     <div
@@ -68,11 +26,11 @@ export default function LeftNav() {
       <div className="logo" />
       <Menu
         theme={menuConfig.theme || "dark"}
-        defaultOpenKeys={menuDefaultOpenKeys(menuList)}
-        defaultSelectedKeys={menuDefaultSelectedKeys(menuList)}
+        defaultOpenKeys={menuDefaultOpenKeys}
+        defaultSelectedKeys={menuDefaultSelectedKeys}
         mode="inline"
       >
-        {renderMenu(menuList)}
+        {renderedMenu}
       </Menu>
     </div>
   );
