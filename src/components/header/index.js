@@ -1,5 +1,5 @@
 import React from "react";
-import { Icon, Avatar } from "antd";
+import { Icon, Avatar, Badge } from "antd";
 import { connect } from "react-redux";
 
 import "./index.less";
@@ -29,7 +29,15 @@ function Header(props) {
             <Icon type="bell" />
           </span>
           <span>
-            <Avatar icon="user" size="small" style={{ padding: "0px" }} />
+            <Badge count={8} overflowCount={5}>
+              <Avatar
+                src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+                icon="user"
+                shape="square"
+                size="small"
+                style={{ padding: "0px" }}
+              />
+            </Badge>
             <span>SilvaQ</span>
           </span>
           <span>
