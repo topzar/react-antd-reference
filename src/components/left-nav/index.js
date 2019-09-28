@@ -1,22 +1,19 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { Menu } from "antd";
 
 import "./index.less";
 
 import { menuList, menuConfig } from "@configs/menuConfig";
 
-import useExpandedMenuItems from "@hooks/useExpandedMenuItems";
-import useRenderMenu from "@hooks/useRenderMenu";
+import MenuItemsHandler from "@utils/menu/menu-items-handler";
+import MenuRenderHandler from "@utils/menu/menu-render-handler";
 
 export default function LeftNav() {
-  let expandedMenuItems = useExpandedMenuItems(menuList);
-  let renderedMenu = useRenderMenu(menuList);
-
-  let menuDefaultSelectedKeys = data =>
-    expandedMenuItems.filter(item => item.is_selected).map(item => item.key);
-
-  let menuDefaultOpenKeys = data =>
-    expandedMenuItems.filter(item => item.is_open).map(item => item.key);
+  const { menuDefaultOpenKeys, menuDefaultSelectedKeys } = useMemo(
+    () => MenuItemsHandler(menuList),
+    []
+  );
+  const renderedMenu = useMemo(() => MenuRenderHandler(menuList), []);
 
   return (
     <div
@@ -29,8 +26,8 @@ export default function LeftNav() {
       <div className="logo" />
       <Menu
         theme={menuConfig.theme || "dark"}
-        defaultOpenKeys={menuDefaultOpenKeys(menuList)}
-        defaultSelectedKeys={menuDefaultSelectedKeys(menuList)}
+        defaultOpenKeys={menuDefaultOpenKeys}
+        defaultSelectedKeys={menuDefaultSelectedKeys}
         mode="inline"
       >
         {renderedMenu}
