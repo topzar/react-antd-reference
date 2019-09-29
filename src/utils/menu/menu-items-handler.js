@@ -18,7 +18,6 @@ function menuDefaultOpenKeys(data) {
 
 //递归提取菜单配置中的所有子菜单，最终返回展开后的整个items组成的数组
 export default function MenuItemsHandler(menuList) {
-  console.log("MenuItemsHandler");
   let expanded = expandAllItems(menuList);
   return {
     expandAllItems: expanded,

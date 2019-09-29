@@ -5,7 +5,6 @@ import { NavLink } from "react-router-dom";
 const { SubMenu } = Menu;
 
 function renderMenu(data) {
-  console.log("renderMenu");
   return data.map(item => {
     if (item.children) {
       return (
