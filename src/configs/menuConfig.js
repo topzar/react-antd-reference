@@ -61,6 +61,11 @@ export const menuList = [
         icon: "windows"
       },
       {
+        title: "表格",
+        key: "/home/ui/tables",
+        icon: "table"
+      },
+      {
         title: "Tab页签",
         key: "/home/ui/tabs"
       },
