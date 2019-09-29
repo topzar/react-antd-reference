@@ -17,6 +17,8 @@ import LoadingMessage from "@pages/ui/loadings/message";
 import NotificationPage from "@pages/ui/notification";
 //messages
 import MessagesPage from "@pages/ui/messages";
+//modals
+import ModalsPage from "@pages/ui/modals";
 
 import Demo1 from "@pages/demo/demo1";
 import Demo2 from "@pages/demo/demo2";
@@ -55,6 +57,7 @@ function MainFrame({ match }) {
           component={NotificationPage}
         />
         <Route path={`${match.path}/ui/messages`} component={MessagesPage} />
+        <Route path={`${match.path}/ui/modals`} component={ModalsPage} />
 
         <Route path={`${match.path}/demo1`} component={Demo1} />
         <Route path={`${match.path}/demo2`} component={Demo2} />
