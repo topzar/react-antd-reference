@@ -99,6 +99,10 @@ export const menuList = [
         key: "/home/demo2"
       },
       {
+        title: "demo3-axios",
+        key: "/home/demo3"
+      },
+      {
         title: "antdPro 的 Header",
         key: "/home/antd-pro-header"
       }
