@@ -21,6 +21,8 @@ import MessagesPage from "@pages/ui/messages";
 import ModalsPage from "@pages/ui/modals";
 //tables
 import TablesPage from "@pages/ui/tables";
+//form
+import FormsPage from "@pages/ui/forms";
 
 import Demo1 from "@pages/demo/demo1";
 import Demo2 from "@pages/demo/demo2";
@@ -61,6 +63,7 @@ function MainFrame({ match }) {
         <Route path={`${match.path}/ui/messages`} component={MessagesPage} />
         <Route path={`${match.path}/ui/modals`} component={ModalsPage} />
         <Route path={`${match.path}/ui/tables`} component={TablesPage} />
+        <Route path={`${match.path}/ui/forms`} component={FormsPage} />
 
         <Route path={`${match.path}/demo1`} component={Demo1} />
         <Route path={`${match.path}/demo2`} component={Demo2} />

@@ -66,6 +66,11 @@ export const menuList = [
         icon: "table"
       },
       {
+        title: "表单",
+        key: "/home/ui/forms",
+        icon: "form"
+      },
+      {
         title: "Tab页签",
         key: "/home/ui/tabs"
       },
