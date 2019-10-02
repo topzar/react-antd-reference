@@ -7,6 +7,7 @@ const configs = {
     alias: {
       "@": path.resolve(__dirname, "src"),
       "@axios": path.resolve(__dirname, "src/lib/axios.js"),
+      "@mocks": path.resolve(__dirname, "src/mocks"),
       "@configs": path.resolve(__dirname, "src/configs"),
       "@hooks": path.resolve(__dirname, "src/hooks"),
       "@utils": path.resolve(__dirname, "src/utils"),
