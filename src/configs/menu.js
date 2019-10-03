@@ -99,7 +99,7 @@ export const menuList = [
         key: "/home/demo2"
       },
       {
-        title: "demo3-axios",
+        title: "网络请求-国际化",
         key: "/home/demo3"
       },
       {

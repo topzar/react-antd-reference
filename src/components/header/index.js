@@ -48,11 +48,9 @@ function Header(props) {
     </div>
   );
 }
-const mapStateToProps = state => {
-  return {
-    collapsed: state.collapsedMenu
-  };
-};
+const mapStateToProps = ({ menuCollapsed }) => ({
+  collapsed: menuCollapsed
+});
 //第一种写法
 const mapDispatchToProps = {
   collapsedMenu: menuActions.collapsedMenu
