@@ -36,6 +36,18 @@
   yarn add redux react-redux redux-thunk
   ```
 
+- 网络请求
+
+  ```
+  yarn add axios
+  ```
+
+- 业务国际化
+
+  ```
+  yarn add react-intl
+  ```
+
 # 可用脚本
 
 1. 开发
