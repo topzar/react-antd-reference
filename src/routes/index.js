@@ -26,7 +26,7 @@ import FormsPage from "@pages/ui/forms";
 
 import Demo1 from "@pages/demo/demo1";
 import Demo2 from "@pages/demo/demo2";
-import Demo3 from "@pages/demo/demo3-axios";
+import Demo3 from "@pages/demo/demo3";
 
 import AntdProHeaderRightIndex from "@pages/demo/antd-pro-header";
 // 当用户访问的是 / 的时候，登陆过的重定向到/home下，否则/login下

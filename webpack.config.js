@@ -14,7 +14,8 @@ const configs = {
       "@components": path.resolve(__dirname, "src/components"),
       "@pages": path.resolve(__dirname, "src/pages"),
       "@routes": path.resolve(__dirname, "src/routes"),
-      "@store": path.resolve(__dirname, "src/store")
+      "@store": path.resolve(__dirname, "src/store"),
+      "@locale": path.resolve(__dirname, "src/locale")
     }
   }
 };
