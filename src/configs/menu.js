@@ -66,6 +66,11 @@ export const menuList = [
         icon: "table"
       },
       {
+        title: "表单",
+        key: "/home/ui/forms",
+        icon: "form"
+      },
+      {
         title: "Tab页签",
         key: "/home/ui/tabs"
       },
@@ -92,6 +97,10 @@ export const menuList = [
       {
         title: "demo2",
         key: "/home/demo2"
+      },
+      {
+        title: "demo3-axios",
+        key: "/home/demo3"
       },
       {
         title: "antdPro 的 Header",

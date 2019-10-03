@@ -2,10 +2,12 @@
 //真正的别名配置在 config-overrides.js下
 //vs code 上使用了插件 Jump To Alias File
 const path = require("path");
-module.exports = {
+const configs = {
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
+      "@axios": path.resolve(__dirname, "src/lib/axios.js"),
+      "@mocks": path.resolve(__dirname, "src/mocks"),
       "@configs": path.resolve(__dirname, "src/configs"),
       "@hooks": path.resolve(__dirname, "src/hooks"),
       "@utils": path.resolve(__dirname, "src/utils"),
@@ -16,3 +18,4 @@ module.exports = {
     }
   }
 };
+module.exports = configs;

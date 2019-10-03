@@ -3,7 +3,7 @@ import { Menu } from "antd";
 
 import "./index.less";
 
-import { menuList, menuConfig } from "@configs/menuConfig";
+import { menuList, menuConfig } from "@configs/menu";
 
 import MenuItemsHandler from "@utils/menu/menu-items-handler";
 import MenuRenderHandler from "@utils/menu/menu-render-handler";
