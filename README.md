@@ -48,6 +48,12 @@
   yarn add react-intl
   ```
 
+- 数据本地保存
+
+  ```
+  yarn add localforage
+  ```
+
 # 可用脚本
 
 1. 开发

@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { Card, Button, message, Radio, Divider } from "antd";
+import React, { useState, useEffect } from "react";
+import { Card, Button, message, Radio, Divider, Input } from "antd";
 import { FormattedMessage } from "react-intl";
 import { connect } from "react-redux";
-
+import localforage from "localforage";
 import axios from "@axios";
 
 import { languageActions } from "../../store/language/index";
@@ -16,6 +16,19 @@ function LocaleDemo(props, context) {
 }
 function AxiosDemo(props) {
   const [loading, setLoading] = useState(false);
+  const [storageData, setStorageData] = useState("");
+
+  useEffect(() => {
+    console.log("数据正在还原");
+    localforage.getItem("test").then(value => {
+      console.log("正在领取仓库中的数据");
+      if (value) {
+        setStorageData(value);
+      } else {
+        console.log("仓库中保存的数据为空");
+      }
+    });
+  }, []);
 
   function handleClick() {
     console.log("handle click here");
@@ -37,7 +50,14 @@ function AxiosDemo(props) {
         message.error("网络请求出错了");
       });
   }
+  function handleDataToLocal(event) {
+    console.log("storageData", storageData);
 
+    localforage.removeItem("test");
+    localforage.setItem("test", storageData).catch(error => {
+      console.log("error", error);
+    });
+  }
   return (
     <div>
       <Card title="网络请求demo" className="card-wrap">
@@ -57,6 +77,23 @@ function AxiosDemo(props) {
         </div>
         <Divider />
         <LocaleDemo />
+      </Card>
+      <Card title="数据本地保存" className="card-wrap">
+        <Input
+          placeholder="请你输入想要保存下来的内容"
+          onChange={e => {
+            const value = e.target.value;
+            setStorageData(value);
+          }}
+        />
+        <Divider />
+        <Button type="primary" onClick={handleDataToLocal}>
+          保存数据
+        </Button>
+        <Divider />
+        <div>
+          <p>{JSON.stringify(storageData)}</p>
+        </div>
       </Card>
     </div>
   );
