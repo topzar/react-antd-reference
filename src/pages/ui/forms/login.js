@@ -25,7 +25,7 @@ function Login(props) {
   const passwordError = isFieldTouched("password") && getFieldError("password");
 
   return (
-    <div>
+    <div className="container">
       <Card>
         <Form layout={formLayout}>
           <Form.Item label="Form Layout">

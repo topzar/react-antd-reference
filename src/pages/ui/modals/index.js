@@ -49,7 +49,7 @@ export default function ModalsPage() {
   }
 
   return (
-    <div>
+    <div className="container">
       <Card className="card-wrap" title="基础 Modals">
         <Button type="primary" onClick={toggleModal.bind(this, "normal")}>
           普通弹框

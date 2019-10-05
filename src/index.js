@@ -6,6 +6,7 @@ import App from "@/App";
 
 import store from "@/store";
 import I18N from "@components/i18n";
+
 if (process.env.NODE_ENV !== "production") {
   require("@mocks");
 }

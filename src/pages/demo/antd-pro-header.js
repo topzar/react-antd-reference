@@ -5,7 +5,7 @@ import "./index.less";
 
 export default function AntdProHeaderRightIndex() {
   return (
-    <div className="antd-pro-header">
+    <div className=" container antd-pro-header ">
       <Card title="顶部小图标demo">
         <span>
           <Icon type="search" />

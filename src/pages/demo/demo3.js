@@ -59,7 +59,7 @@ function AxiosDemo(props) {
     });
   }
   return (
-    <div>
+    <div className="container">
       <Card title="网络请求demo" className="card-wrap">
         <Button loading={loading} onClick={handleClick}>
           提交请求

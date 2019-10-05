@@ -4,7 +4,7 @@ import { Card } from "antd";
 import Login from "./login";
 export default function FormsPage() {
   return (
-    <div>
+    <div className="container">
       <Card title="登录表单">
         <Login />
       </Card>

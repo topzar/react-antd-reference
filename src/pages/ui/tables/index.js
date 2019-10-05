@@ -146,7 +146,7 @@ export default function TablesPage() {
   };
 
   return (
-    <div>
+    <div className="container">
       <Card className="card-wrap" title="基本展示">
         <Table dataSource={dataSource} columns={columns} />
       </Card>

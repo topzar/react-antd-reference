@@ -6,7 +6,7 @@ import "../index.less";
 export default function LoadingButton() {
   const [loading, setLoading] = useState(true);
   return (
-    <div>
+    <div className="container">
       <Card title="加载中按钮" className="card-wrap">
         <Button
           type="primary"

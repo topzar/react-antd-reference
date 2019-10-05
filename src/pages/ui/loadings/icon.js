@@ -9,7 +9,7 @@ const IconFont = Icon.createFromIconfontCN({
 
 export default function LoadingIcon() {
   return (
-    <div>
+    <div className="container">
       <Card title="加载中 icons" className="card-wrap block_span">
         <Row>
           <Col span={3}>

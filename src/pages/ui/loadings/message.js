@@ -17,7 +17,7 @@ export default function LoadingButton() {
   }
 
   return (
-    <div>
+    <div className="container">
       {/* <Card title="加载控制器" className="card-wrap">
         <div style={{ marginTop: 16 }}>
           tonggle Loading state：

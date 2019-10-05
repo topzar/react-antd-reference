@@ -76,7 +76,7 @@ export default function Notification() {
   }
 
   return (
-    <div className="notofication-page-container">
+    <div className="container notofication-page-container">
       <Card title="自定义样式和 Icon 的通知提示框" className="card-wrap">
         <Button type="primary" onClick={openNotification}>
           显示一个正常提示框
