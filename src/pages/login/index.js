@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import { Card, Form, Button, Input, Spin, Icon } from "antd";
 
+import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
+import { loginIn } from "../../store/user/actions";
+
 import "./index.less";
 
 function LoginPage(props) {
   const [loading, setLoading] = useState(false);
-  const { getFieldDecorator, validateFields, resetFields } = props.form;
+  const [toHome, setToHome] = useState(false);
+  const { getFieldDecorator, validateFields } = props.form;
 
   const formItemLayout = {
     labelCol: {
@@ -29,9 +34,13 @@ function LoginPage(props) {
 
   function submitForm({ userName, userPass }) {
     setLoading(true);
+
     setTimeout(() => {
       setLoading(false);
-      resetFields();
+
+      // resetFields();
+      props.doLogin();
+      setToHome(true);
     }, 3000);
     console.log(
       "变量信息->: submitForm -> userName, userPass",
@@ -40,7 +49,9 @@ function LoginPage(props) {
     );
   }
 
-  return (
+  return toHome ? (
+    <Redirect to="/home" />
+  ) : (
     <div className="container login-page-container">
       <div className="login-area">
         <Card title="管理系统-管理员登录页">
@@ -94,4 +105,14 @@ function LoginPage(props) {
   );
 }
 
-export default Form.create()(LoginPage);
+const mapDispatchToProps = {
+  doLogin: () => {
+    return (dispatch, getState) => {
+      dispatch(loginIn());
+    };
+  }
+};
+export default connect(
+  null,
+  mapDispatchToProps
+)(Form.create()(LoginPage));
