@@ -86,25 +86,29 @@ export const menuList = [
   },
   {
     title: "Demo",
-    key: "/home/Demo",
+    key: "/home/demo",
     is_open: true,
     icon: "smile",
     children: [
       {
         title: "demo1",
-        key: "/home/demo1"
+        key: "/home/demo/demo1"
       },
       {
         title: "demo2",
-        key: "/home/demo2"
+        key: "/home/demo/demo2"
       },
       {
         title: "网络请求-国际化",
-        key: "/home/demo3"
+        key: "/home/demo/demo3"
       },
       {
         title: "antdPro 的 Header",
-        key: "/home/antd-pro-header"
+        key: "/home/demo/antd-pro-header"
+      },
+      {
+        title: "Grid 栅格",
+        key: "/home/demo/grid-layout"
       }
     ]
   }
