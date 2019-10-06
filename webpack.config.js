@@ -2,7 +2,7 @@
 //真正的别名配置在 config-overrides.js下
 //vs code 上使用了插件 Jump To Alias File
 const path = require("path");
-const configs = {
+module.exports = {
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
@@ -19,4 +19,3 @@ const configs = {
     }
   }
 };
-module.exports = configs;

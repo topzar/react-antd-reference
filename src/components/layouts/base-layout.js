@@ -30,9 +30,9 @@ function BaseLayout(props) {
   );
 }
 
-const mapStateToProps = ({ menuCollapsed }) => {
+const mapStateToProps = state => {
   return {
-    collapsed: menuCollapsed
+    collapsed: state.get("menu").get("collapsed")
   };
 };
 export default connect(mapStateToProps)(BaseLayout);

@@ -48,21 +48,21 @@ function Header(props) {
     </div>
   );
 }
-const mapStateToProps = ({ menuCollapsed }) => ({
-  collapsed: menuCollapsed
+const mapStateToProps = state => ({
+  collapsed: state.get("menu").get("collapsed")
 });
 //第一种写法
-const mapDispatchToProps = {
-  collapsedMenu: collapsedMenu
-};
-//第二种写法
 // const mapDispatchToProps = {
-//   collapsedMenu: () => {
-//     return (dispatch, getState) => {
-//       dispatch(collapsedMenu());
-//     };
-//   }
+//   collapsedMenu: collapsedMenu
 // };
+//第二种写法
+const mapDispatchToProps = {
+  collapsedMenu: () => {
+    return (dispatch, getState) => {
+      dispatch(collapsedMenu());
+    };
+  }
+};
 export default connect(
   mapStateToProps,
   mapDispatchToProps
