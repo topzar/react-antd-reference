@@ -3,9 +3,10 @@ import { Card, Button, message, Radio, Divider, Input } from "antd";
 import { FormattedMessage } from "react-intl";
 import { connect } from "react-redux";
 import localforage from "localforage";
+
 import axios from "@axios";
 
-import { languageActions } from "../../store/language/index";
+import { changeLanguage } from "@store/language/actions";
 
 function LocaleDemo(props, context) {
   return (
@@ -103,6 +104,6 @@ export default connect(
   null,
   {
     changeLanguage: lang => (dispatch, getState) =>
-      dispatch(languageActions.changeLanguage(lang))
+      dispatch(changeLanguage(lang))
   }
 )(AxiosDemo);
