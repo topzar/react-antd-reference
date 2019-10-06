@@ -27,6 +27,7 @@ import FormsPage from "@pages/ui/forms";
 import Demo1 from "@pages/demo/demo1";
 import Demo2 from "@pages/demo/demo2";
 import Demo3 from "@pages/demo/demo3";
+import GridLayoutPage from "@pages/demo/demo-grid-layout";
 
 import AntdProHeaderRightIndex from "@pages/demo/antd-pro-header";
 // 当用户访问的是 / 的时候，登陆过的重定向到/home下，否则/login下
@@ -66,11 +67,15 @@ function MainFrame({ match }) {
         <Route path={`${match.path}/ui/tables`} component={TablesPage} />
         <Route path={`${match.path}/ui/forms`} component={FormsPage} />
 
-        <Route path={`${match.path}/demo1`} component={Demo1} />
-        <Route path={`${match.path}/demo2`} component={Demo2} />
-        <Route path={`${match.path}/demo3`} component={Demo3} />
+        <Route path={`${match.path}/demo/demo1`} component={Demo1} />
+        <Route path={`${match.path}/demo/demo2`} component={Demo2} />
+        <Route path={`${match.path}/demo/demo3`} component={Demo3} />
         <Route
-          path={`${match.path}/antd-pro-header`}
+          path={`${match.path}/demo/grid-layout`}
+          component={GridLayoutPage}
+        />
+        <Route
+          path={`${match.path}/demo/antd-pro-header`}
           component={AntdProHeaderRightIndex}
         />
 

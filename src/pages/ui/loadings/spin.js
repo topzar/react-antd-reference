@@ -8,7 +8,7 @@ const anticon = <Icon type="loading" style={{ fontSize: 24 }} spin />;
 export default function LoadingButton() {
   const [loading, setLoading] = useState(true);
   return (
-    <div>
+    <div className="container">
       <Card title="加载控制器" className="card-wrap">
         <div style={{ marginTop: 16 }}>
           tonggle Loading state：

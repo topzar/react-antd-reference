@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 import "./index.less";
 
-import { menuActions } from "@store/menu/index";
+import { collapsedMenu } from "@store/menu/actions";
 
 function Header(props) {
   return (
@@ -48,21 +48,21 @@ function Header(props) {
     </div>
   );
 }
-const mapStateToProps = ({ menuCollapsed }) => ({
-  collapsed: menuCollapsed
+const mapStateToProps = state => ({
+  collapsed: state.get("menu").get("collapsed")
 });
 //第一种写法
-const mapDispatchToProps = {
-  collapsedMenu: menuActions.collapsedMenu
-};
-//第二种写法
 // const mapDispatchToProps = {
-//   collapsedMenu: () => {
-//     return (dispatch, getState) => {
-//       dispatch(menuActions.collapsedMenu());
-//     };
-//   }
+//   collapsedMenu: collapsedMenu
 // };
+//第二种写法
+const mapDispatchToProps = {
+  collapsedMenu: () => {
+    return (dispatch, getState) => {
+      dispatch(collapsedMenu());
+    };
+  }
+};
 export default connect(
   mapStateToProps,
   mapDispatchToProps

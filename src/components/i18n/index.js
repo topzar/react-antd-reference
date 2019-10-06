@@ -29,8 +29,9 @@ function I18N(props) {
     </IntlProvider>
   );
 }
-const mapStateToProps = ({ language }, ownProps) => {
-  const langData = chooseLocale(language);
+const mapStateToProps = (state, ownProps) => {
+  const locale = state.get("language").get("locale");
+  const langData = chooseLocale(locale);
   return {
     locale: langData.locale,
     messages: langData.messages

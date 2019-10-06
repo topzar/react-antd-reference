@@ -1,7 +1,7 @@
-import { createStore, combineReducers, compose, applyMiddleware } from "redux";
+import { createStore, compose, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
-import { menuReducer } from "./menu";
-import { languageReducer } from "./language";
+
+import reducers from "./reducers";
 
 const composeEnhancers =
   typeof window === "object" && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
@@ -11,9 +11,6 @@ const composeEnhancers =
     : compose;
 
 const enhancer = composeEnhancers(applyMiddleware(thunk));
-const store = createStore(
-  combineReducers({ menuCollapsed: menuReducer, language: languageReducer }),
-  enhancer
-);
+const store = createStore(reducers, enhancer);
 
 export default store;
