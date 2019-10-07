@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { Card, Form, Button, Input, Spin, Icon } from "antd";
-
 import { connect } from "react-redux";
-import { Redirect } from "react-router-dom";
+
 import { loginIn } from "../../store/user/actions";
 
 import "./index.less";
 
 function LoginPage(props) {
   const [loading, setLoading] = useState(false);
-  const [toHome, setToHome] = useState(false);
+
   const { getFieldDecorator, validateFields } = props.form;
+  const { history, location } = props;
 
   const formItemLayout = {
     labelCol: {
@@ -37,21 +37,14 @@ function LoginPage(props) {
 
     setTimeout(() => {
       setLoading(false);
-
       // resetFields();
       props.doLogin();
-      setToHome(true);
+
+      history.replace("/home", location.state);
     }, 3000);
-    console.log(
-      "变量信息->: submitForm -> userName, userPass",
-      userName,
-      userPass
-    );
   }
 
-  return toHome ? (
-    <Redirect to="/home" />
-  ) : (
+  return (
     <div className="container login-page-container">
       <div className="login-area">
         <Card title="管理系统-管理员登录页">
