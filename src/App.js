@@ -1,10 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
+import { connect } from "react-redux";
 
 import Routes from "@routes";
+import { loginIn, loginOut } from "./store/user/actions";
+
 import "./App.less";
 
-function App() {
+function App(props) {
+  props.lastLoginStatus();
   return (
     <div className="App">
       <Router>
@@ -14,4 +18,18 @@ function App() {
   );
 }
 
-export default App;
+const mapDispatchToProps = {
+  lastLoginStatus: () => {
+    return (dispatch, getState) => {
+      if (localStorage.getItem("loginStatus") === "true") {
+        dispatch(loginIn());
+      } else {
+        dispatch(loginOut());
+      }
+    };
+  }
+};
+export default connect(
+  null,
+  mapDispatchToProps
+)(App);
