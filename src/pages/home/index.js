@@ -1,8 +1,7 @@
 import React from "react";
-
 import BaseLayout from "@components/layouts/base-layout";
 
-export default function HomePage(props) {
+function HomePage(props) {
   return (
     <BaseLayout>
       {/* 这里要填充内容 */}
@@ -10,3 +9,5 @@ export default function HomePage(props) {
     </BaseLayout>
   );
 }
+
+export default HomePage;

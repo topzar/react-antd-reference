@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import { Card, Form, Button, Input, Spin, Icon } from "antd";
+import { connect } from "react-redux";
+
+import { loginIn } from "../../store/user/actions";
 
 import "./index.less";
 
 function LoginPage(props) {
   const [loading, setLoading] = useState(false);
-  const { getFieldDecorator, validateFields, resetFields } = props.form;
+
+  const { getFieldDecorator, validateFields } = props.form;
+  const { history, location } = props;
 
   const formItemLayout = {
     labelCol: {
@@ -29,15 +34,14 @@ function LoginPage(props) {
 
   function submitForm({ userName, userPass }) {
     setLoading(true);
+
     setTimeout(() => {
       setLoading(false);
-      resetFields();
+      // resetFields();
+      props.doLogin();
+
+      history.replace("/home", location.state);
     }, 3000);
-    console.log(
-      "变量信息->: submitForm -> userName, userPass",
-      userName,
-      userPass
-    );
   }
 
   return (
@@ -94,4 +98,14 @@ function LoginPage(props) {
   );
 }
 
-export default Form.create()(LoginPage);
+const mapDispatchToProps = {
+  doLogin: () => {
+    return (dispatch, getState) => {
+      dispatch(loginIn());
+    };
+  }
+};
+export default connect(
+  null,
+  mapDispatchToProps
+)(Form.create()(LoginPage));
