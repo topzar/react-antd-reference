@@ -6,6 +6,7 @@ import "./index.less";
 
 import { collapsedMenu } from "@store/menu/actions";
 import SelectLang from "./select-lang";
+import AvatarDropDown from "./avatar-drop-down";
 
 function Header(props) {
   return (
@@ -20,6 +21,7 @@ function Header(props) {
       </span>
       <div className="global-header-index-right">
         <div className="antd-pro-header">
+          <AvatarDropDown />
           <SelectLang />
         </div>
       </div>
