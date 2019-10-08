@@ -9,7 +9,7 @@ import "./index.less";
 function LoginPage(props) {
   const [loading, setLoading] = useState(false);
 
-  const { getFieldDecorator, validateFields } = props.form;
+  const { getFieldDecorator, validateFields, resetFields } = props.form;
   const { history, location } = props;
 
   const formItemLayout = {
@@ -37,9 +37,9 @@ function LoginPage(props) {
 
     setTimeout(() => {
       setLoading(false);
-      // resetFields();
+      resetFields();
+      localStorage.setItem("loginStatus", "true");
       props.doLogin();
-
       history.replace("/home", location.state);
     }, 3000);
   }
