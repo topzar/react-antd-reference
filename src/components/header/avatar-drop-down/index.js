@@ -1,12 +1,23 @@
-import { Avatar, Icon, Menu } from "antd";
 import React from "react";
+import { Avatar, Icon, Menu } from "antd";
+import { connect } from "react-redux";
+
+import storage from "@storage";
+import { loginOut } from "@store/user/actions";
 import "./index.less";
 
 import HeaderDropdown from "../header-drop-down";
 
 function AvatarDropdown(props) {
+  function handleMenuItemClick({ key }) {
+    if (key === "logout") {
+      storage.remove("loginStatus");
+      props.userLogout();
+    }
+  }
+
   const menuHeaderDropdown = (
-    <Menu className="menu">
+    <Menu className="menu" onClick={handleMenuItemClick}>
       <Menu.Item key="center">
         <Icon type="user" />
         个人中心
@@ -39,4 +50,15 @@ function AvatarDropdown(props) {
     </HeaderDropdown>
   );
 }
-export default AvatarDropdown;
+
+const mapDispatchToProps = {
+  userLogout: () => {
+    return dispatch => {
+      dispatch(loginOut());
+    };
+  }
+};
+export default connect(
+  null,
+  mapDispatchToProps
+)(AvatarDropdown);
