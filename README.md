@@ -49,9 +49,11 @@
   ```
 
 - 数据本地保存
-
+  > ~~yarn add localforage~~
+  >
+  > ~~yarn add store~~
   ```
-  yarn add localforage
+  yarn add store2
   ```
 
 # 可用脚本

@@ -7,6 +7,7 @@ module.exports = {
     alias: {
       "@": path.resolve(__dirname, "src"),
       "@axios": path.resolve(__dirname, "src/lib/axios.js"),
+      "@storage": path.resolve(__dirname, "src/utils/storage.js"),
       "@mocks": path.resolve(__dirname, "src/mocks"),
       "@configs": path.resolve(__dirname, "src/configs"),
       "@hooks": path.resolve(__dirname, "src/hooks"),
