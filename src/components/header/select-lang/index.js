@@ -3,24 +3,28 @@ import React from "react";
 import { Icon, Menu } from "antd";
 import HeaderDropdown from "../header-drop-down";
 import classNames from "classnames";
+import { connect } from "react-redux";
+
 import "./index.less";
-const locales = ["zh-CN", "zh-TW", "en-US", "pt-BR"];
+import { changeLanguage } from "@store/language/actions";
+
+const locales = ["zh", "en"];
 const languageLabels = {
-  "zh-CN": "简体中文",
-  "zh-TW": "繁体中文",
-  "en-US": "English",
-  "pt-BR": "Português"
+  zh: "简体中文",
+  en: "English"
 };
 const languageIcons = {
-  "zh-CN": "🇨🇳",
-  "zh-TW": "🇭🇰",
-  "en-US": "🇺🇸",
-  "pt-BR": "🇧🇷"
+  zh: "🇨🇳",
+  en: "🇺🇸"
 };
 
 function SelectLang(props) {
+  function changeLang({ key }) {
+    props.changeStoreLanguage(key);
+  }
+
   const langMenu = (
-    <Menu className="menu">
+    <Menu className="menu" onClick={changeLang}>
       {locales.map(locale => (
         <Menu.Item key={locale}>
           <span role="img" aria-label={languageLabels[locale]}>
@@ -40,4 +44,14 @@ function SelectLang(props) {
   );
 }
 
-export default SelectLang;
+const mapDispatchToProps = {
+  changeStoreLanguage: locale => {
+    return dispatch => {
+      dispatch(changeLanguage(locale));
+    };
+  }
+};
+export default connect(
+  null,
+  mapDispatchToProps
+)(SelectLang);
