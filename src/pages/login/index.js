@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Card, Form, Button, Input, Spin, Icon } from "antd";
+import { Card, Form, Button, Input, Spin, Icon, message } from "antd";
 import { connect } from "react-redux";
 
 import { loginIn } from "../../store/user/actions";
 import storage from "@storage";
+import { userLogin } from "../../api/user/login";
 
 import "./index.less";
 
@@ -36,13 +37,26 @@ function LoginPage(props) {
   function submitForm({ userName, userPass }) {
     setLoading(true);
 
-    setTimeout(() => {
-      setLoading(false);
-      resetFields();
-      storage.set("loginStatus", "true");
-      props.doLogin();
-      history.replace("/home", location.state);
-    }, 3000);
+    userLogin({ userName, userPass })
+      .then(({ status, data: res }) => {
+        if (res.code !== 0) {
+          message.error(res.message);
+          return false;
+        }
+
+        storage.set("loginStatus", "true");
+        props.doLogin();
+        message.success("登录成功").then(() => {
+          resetFields();
+          history.replace("/home", location.state);
+        });
+      })
+      .catch(err => {
+        message.error(err);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }
 
   return (
