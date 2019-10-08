@@ -16,7 +16,8 @@ module.exports = {
       "@pages": path.resolve(__dirname, "src/pages"),
       "@routes": path.resolve(__dirname, "src/routes"),
       "@store": path.resolve(__dirname, "src/store"),
-      "@locale": path.resolve(__dirname, "src/locale")
+      "@locale": path.resolve(__dirname, "src/locale"),
+      "@api": path.resolve(__dirname, "src/api")
     }
   }
 };

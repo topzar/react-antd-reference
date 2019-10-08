@@ -1,5 +1,5 @@
 import Mock from "mockjs";
-import { getUserInfo } from "@mocks/user";
+import { userLogin } from "@mocks/user";
 
 // 配置Ajax请求延时，可用来测试网络延迟大时项目中一些效果
 Mock.setup({
@@ -7,6 +7,5 @@ Mock.setup({
 });
 
 // 登录相关和获取用户信息
-Mock.mock(/\/user\/info/, getUserInfo);
-
+Mock.mock(new RegExp("/api/user/login"), userLogin);
 export default Mock;
