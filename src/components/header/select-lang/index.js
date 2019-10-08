@@ -2,7 +2,8 @@ import React from "react";
 
 import { Icon, Menu } from "antd";
 import HeaderDropdown from "../header-drop-down";
-
+import classNames from "classnames";
+import "./index.less";
 const locales = ["zh-CN", "zh-TW", "en-US", "pt-BR"];
 const languageLabels = {
   "zh-CN": "简体中文",
@@ -19,7 +20,7 @@ const languageIcons = {
 
 function SelectLang(props) {
   const langMenu = (
-    <Menu>
+    <Menu className="menu">
       {locales.map(locale => (
         <Menu.Item key={locale}>
           <span role="img" aria-label={languageLabels[locale]}>
@@ -32,7 +33,7 @@ function SelectLang(props) {
   );
   return (
     <HeaderDropdown overlay={langMenu} placement="bottomRight">
-      <span>
+      <span className={classNames("action", "dropDown", props.className || "")}>
         <Icon type="global" />
       </span>
     </HeaderDropdown>

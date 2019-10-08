@@ -1,54 +1,40 @@
 import { Avatar, Icon, Menu } from "antd";
 import React from "react";
+import "./index.less";
 
 import HeaderDropdown from "../header-drop-down";
 
 function AvatarDropdown(props) {
   const menuHeaderDropdown = (
-    <Menu>
+    <Menu className="menu">
       <Menu.Item key="center">
         <Icon type="user" />
-        account center
+        个人中心
       </Menu.Item>
 
       <Menu.Item key="settings">
         <Icon type="setting" />
-        account settings
+        个人设置
       </Menu.Item>
 
       <Menu.Divider />
       <Menu.Item key="logout">
         <Icon type="logout" />
-        logout
+        退出登录
       </Menu.Item>
     </Menu>
   );
 
   return (
     <HeaderDropdown overlay={menuHeaderDropdown}>
-      <span>
+      <span className="action account">
         <Avatar
-          style={{
-            width: "24px",
-            height: "24px",
-            lineHeight: "24px",
-            borderRadius: "50%",
-            margin: " 20px 8px 20px 0",
-            padding: "0px",
-            verticalAlign: "top",
-            color: "#1890ff"
-          }}
+          className="avatar"
           size="small"
           src="https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png"
           alt="avatar"
         />
-        <span
-          style={{
-            padding: "0px"
-          }}
-        >
-          SilvaQ
-        </span>
+        <span className="name">SilvaQ</span>
       </span>
     </HeaderDropdown>
   );
