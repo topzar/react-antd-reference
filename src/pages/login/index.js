@@ -3,6 +3,7 @@ import { Card, Form, Button, Input, Spin, Icon } from "antd";
 import { connect } from "react-redux";
 
 import { loginIn } from "../../store/user/actions";
+import storage from "@storage";
 
 import "./index.less";
 
@@ -38,7 +39,7 @@ function LoginPage(props) {
     setTimeout(() => {
       setLoading(false);
       resetFields();
-      localStorage.setItem("loginStatus", "true");
+      storage.set("loginStatus", "true");
       props.doLogin();
       history.replace("/home", location.state);
     }, 3000);

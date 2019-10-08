@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Card, Button, message, Radio, Divider, Input } from "antd";
 import { FormattedMessage } from "react-intl";
 import { connect } from "react-redux";
-import localforage from "localforage";
 
 import axios from "@axios";
 
@@ -18,18 +17,6 @@ function LocaleDemo(props, context) {
 function AxiosDemo(props) {
   const [loading, setLoading] = useState(false);
   const [storageData, setStorageData] = useState("");
-
-  useEffect(() => {
-    console.log("数据正在还原");
-    localforage.getItem("test").then(value => {
-      console.log("正在领取仓库中的数据");
-      if (value) {
-        setStorageData(value);
-      } else {
-        console.log("仓库中保存的数据为空");
-      }
-    });
-  }, []);
 
   function handleClick() {
     console.log("handle click here");
@@ -51,14 +38,7 @@ function AxiosDemo(props) {
         message.error("网络请求出错了");
       });
   }
-  function handleDataToLocal(event) {
-    console.log("storageData", storageData);
-
-    localforage.removeItem("test");
-    localforage.setItem("test", storageData).catch(error => {
-      console.log("error", error);
-    });
-  }
+  function handleDataToLocal(event) {}
   return (
     <div className="container">
       <Card title="网络请求demo" className="card-wrap">
