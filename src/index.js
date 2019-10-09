@@ -5,7 +5,7 @@ import { Provider } from "react-redux";
 import App from "@/App";
 
 import store from "@/store";
-import I18N from "@components/i18n";
+import I18N from "@components/I18N";
 
 if (process.env.NODE_ENV !== "production") {
   require("@mocks");
