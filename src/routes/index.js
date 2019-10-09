@@ -44,31 +44,31 @@ function MainFrame({ match }) {
     <HomePage>
       <Switch>
         <Route exact path={`${match.path}`} component={HomeDefault} />
-        <Route path={`${match.path}/UI/buttons`} component={ButtonsPage} />
+        <Route path={`${match.path}/ui/buttons`} component={ButtonsPage} />
         <Route
-          path={`${match.path}/UI/loadings/icon`}
+          path={`${match.path}/ui/loadings/icon`}
           component={LoadingIcon}
         />
         <Route
-          path={`${match.path}/UI/loadings/button`}
+          path={`${match.path}/ui/loadings/button`}
           component={LoadingButton}
         />
         <Route
-          path={`${match.path}/UI/loadings/spin`}
+          path={`${match.path}/ui/loadings/spin`}
           component={LoadingSpin}
         />
         <Route
-          path={`${match.path}/UI/loadings/message`}
+          path={`${match.path}/ui/loadings/message`}
           component={LoadingMessage}
         />
         <Route
-          path={`${match.path}/UI/notification`}
+          path={`${match.path}/ui/notification`}
           component={NotificationPage}
         />
-        <Route path={`${match.path}/UI/messages`} component={MessagesPage} />
-        <Route path={`${match.path}/UI/modals`} component={ModalsPage} />
-        <Route path={`${match.path}/UI/tables`} component={TablesPage} />
-        <Route path={`${match.path}/UI/forms`} component={FormsPage} />
+        <Route path={`${match.path}/ui/messages`} component={MessagesPage} />
+        <Route path={`${match.path}/ui/modals`} component={ModalsPage} />
+        <Route path={`${match.path}/ui/tables`} component={TablesPage} />
+        <Route path={`${match.path}/ui/forms`} component={FormsPage} />
 
         <Route path={`${match.path}/Demo/Demo1`} component={Demo1} />
         <Route path={`${match.path}/Demo/Demo2`} component={Demo2} />
