@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Icon, Menu } from "antd";
-import HeaderDropdown from "../header-drop-down";
+import HeaderDropdown from "../HeaderDropDown";
 import classNames from "classnames";
 import { connect } from "react-redux";
 

@@ -6,7 +6,7 @@ import storage from "@storage";
 import { loginOut } from "@store/user/actions";
 import "./index.less";
 
-import HeaderDropdown from "../header-drop-down";
+import HeaderDropdown from "../HeaderDropDown";
 
 function AvatarDropdown(props) {
   function handleMenuItemClick({ key }) {

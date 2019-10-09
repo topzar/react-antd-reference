@@ -1,37 +1,37 @@
 import React from "react";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 
-import PrivateRoute from "@components/private-route";
+import PrivateRoute from "@components/PrivateRoute";
 
-import HomeDefault from "@pages/home/default";
-import HomePage from "@pages/home";
+import HomeDefault from "@pages/Home/Default";
+import HomePage from "@pages/Home";
 import Page404 from "@pages/404";
-import LoginPage from "@pages/login";
+import LoginPage from "@pages/Login";
 
-//  pages/ui/
-import ButtonsPage from "@pages/ui/buttons";
-import LoadingIcon from "@pages/ui/loadings/icon";
-import LoadingButton from "@pages/ui/loadings/button";
-import LoadingSpin from "@pages/ui/loadings/spin";
-import LoadingMessage from "@pages/ui/loadings/message";
+//  pages/UI/
+import ButtonsPage from "@pages/UI/Buttons";
+import LoadingIcon from "@pages/UI/Loadings/Icon";
+import LoadingButton from "@pages/UI/Loadings/Button";
+import LoadingSpin from "@pages/UI/Loadings/Spin";
+import LoadingMessage from "@pages/UI/Loadings/Message";
 
 // notification
-import NotificationPage from "@pages/ui/notification";
+import NotificationPage from "@pages/UI/Notification";
 //messages
-import MessagesPage from "@pages/ui/messages";
+import MessagesPage from "@pages/UI/Messages";
 //modals
-import ModalsPage from "@pages/ui/modals";
+import ModalsPage from "@pages/UI/Modals";
 //tables
-import TablesPage from "@pages/ui/tables";
+import TablesPage from "@pages/UI/Tables";
 //form
-import FormsPage from "@pages/ui/forms";
+import FormsPage from "@pages/UI/Forms";
 
-import Demo1 from "@pages/demo/demo1";
-import Demo2 from "@pages/demo/demo2";
-import Demo3 from "@pages/demo/demo3";
-import GridLayoutPage from "@pages/demo/demo-grid-layout";
+import Demo1 from "@pages/Demo/Demo1";
+import Demo2 from "@pages/Demo/Demo2";
+import Demo3 from "@pages/Demo/Demo3";
+import GridLayoutPage from "@pages/Demo/DemoGridLayout";
 
-import AntdProHeaderRightIndex from "@pages/demo/antd-pro-header";
+import AntdProHeaderRightIndex from "@pages/Demo/AntdProHeader";
 
 // 引导用户到/home下
 function Guard() {
@@ -44,41 +44,41 @@ function MainFrame({ match }) {
     <HomePage>
       <Switch>
         <Route exact path={`${match.path}`} component={HomeDefault} />
-        <Route path={`${match.path}/ui/buttons`} component={ButtonsPage} />
+        <Route path={`${match.path}/UI/buttons`} component={ButtonsPage} />
         <Route
-          path={`${match.path}/ui/loadings/icon`}
+          path={`${match.path}/UI/loadings/icon`}
           component={LoadingIcon}
         />
         <Route
-          path={`${match.path}/ui/loadings/button`}
+          path={`${match.path}/UI/loadings/button`}
           component={LoadingButton}
         />
         <Route
-          path={`${match.path}/ui/loadings/spin`}
+          path={`${match.path}/UI/loadings/spin`}
           component={LoadingSpin}
         />
         <Route
-          path={`${match.path}/ui/loadings/message`}
+          path={`${match.path}/UI/loadings/message`}
           component={LoadingMessage}
         />
         <Route
-          path={`${match.path}/ui/notification`}
+          path={`${match.path}/UI/notification`}
           component={NotificationPage}
         />
-        <Route path={`${match.path}/ui/messages`} component={MessagesPage} />
-        <Route path={`${match.path}/ui/modals`} component={ModalsPage} />
-        <Route path={`${match.path}/ui/tables`} component={TablesPage} />
-        <Route path={`${match.path}/ui/forms`} component={FormsPage} />
+        <Route path={`${match.path}/UI/messages`} component={MessagesPage} />
+        <Route path={`${match.path}/UI/modals`} component={ModalsPage} />
+        <Route path={`${match.path}/UI/tables`} component={TablesPage} />
+        <Route path={`${match.path}/UI/forms`} component={FormsPage} />
 
-        <Route path={`${match.path}/demo/demo1`} component={Demo1} />
-        <Route path={`${match.path}/demo/demo2`} component={Demo2} />
-        <Route path={`${match.path}/demo/demo3`} component={Demo3} />
+        <Route path={`${match.path}/Demo/Demo1`} component={Demo1} />
+        <Route path={`${match.path}/Demo/Demo2`} component={Demo2} />
+        <Route path={`${match.path}/Demo/Demo3`} component={Demo3} />
         <Route
-          path={`${match.path}/demo/grid-layout`}
+          path={`${match.path}/Demo/grid-layout`}
           component={GridLayoutPage}
         />
         <Route
-          path={`${match.path}/demo/antd-pro-header`}
+          path={`${match.path}/Demo/antd-pro-header`}
           component={AntdProHeaderRightIndex}
         />
 

@@ -10,7 +10,7 @@ import {
   Radio
 } from "antd";
 
-import ModalInsideDemo from "@pages/ui/modals/in-modal-demo";
+import ModalInsideDemo from "@pages/UI/Modals/InModalDemo";
 
 export default function ModalsPage() {
   const [showModal, setShowModal] = useState(false);

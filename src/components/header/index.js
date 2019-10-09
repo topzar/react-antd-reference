@@ -5,8 +5,8 @@ import { connect } from "react-redux";
 import "./index.less";
 
 import { collapsedMenu } from "@store/menu/actions";
-import SelectLang from "./select-lang";
-import AvatarDropDown from "./avatar-drop-down";
+import SelectLang from "./SelectLang";
+import AvatarDropDown from "./AvatarDropDown";
 
 function Header(props) {
   return (

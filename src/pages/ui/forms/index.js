@@ -1,7 +1,7 @@
 import React from "react";
 import { Card } from "antd";
 
-import Login from "./login";
+import Login from "./Login";
 export default function FormsPage() {
   return (
     <div className="container">

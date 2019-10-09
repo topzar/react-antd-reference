@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Card, Form, Button, Input, Spin, Icon, message } from "antd";
 import { connect } from "react-redux";
 
-import { loginIn } from "../../store/user/actions";
+import { loginIn } from "@store/user/actions";
 import storage from "@storage";
-import { userLogin } from "../../api/user/login";
+import { userLogin } from "@api/user/login";
 
 import "./index.less";
 
