@@ -17,7 +17,8 @@ module.exports = {
       "@routes": path.resolve(__dirname, "src/routes"),
       "@store": path.resolve(__dirname, "src/store"),
       "@locale": path.resolve(__dirname, "src/locale"),
-      "@api": path.resolve(__dirname, "src/api")
+      "@api": path.resolve(__dirname, "src/api"),
+      "@models": path.resolve(__dirname, "src/models")
     }
   }
 };
