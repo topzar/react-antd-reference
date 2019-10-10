@@ -30,12 +30,14 @@ module.exports = override(
       {
         loader: "css-loader",
         options: {
-          importLoaders: 2,
-          modules: true
+          importLoaders: 1,
+          modules: true,
           // 0 => no loaders (default);
           // 1 => postcss-loader;
           // 2 => postcss-loader, sass-loader
           // sourceMap: true,
+          localIdentName: "[local]__[hash:base64:5]", //"dev:可选[path][local]__[name]__[hash:base64:5]"  product: "[local]--[hash:base64:5]" // if you use CSS Modules, and custom `localIdentName`, default is '[local]--[hash:base64:5]'.
+          camelCase: true
         }
       },
       {
@@ -43,8 +45,7 @@ module.exports = override(
         options: {
           javascriptEnabled: true,
           // strictMath: true,
-          noIeCompat: true,
-          localIdentName: "[local]--[hash:base64:5]" //"[path][name]__[local]"  product: "[local]--[hash:base64:5]" // if you use CSS Modules, and custom `localIdentName`, default is '[local]--[hash:base64:5]'.
+          noIeCompat: true
         }
       }
     ]
