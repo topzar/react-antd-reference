@@ -10,6 +10,9 @@ import {
   Popconfirm,
   message
 } from "antd";
+import ClassNames from "classnames";
+
+import styles from "../index.less";
 
 export default function TablesPage() {
   const [selectRow, setSelectRow] = useState([]);
@@ -146,7 +149,7 @@ export default function TablesPage() {
   };
 
   return (
-    <div className="container">
+    <div className={ClassNames("container", styles.uiDemos)}>
       <Card className="card-wrap" title="基本展示">
         <Table dataSource={dataSource} columns={columns} />
       </Card>

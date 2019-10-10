@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Row, Col, Icon } from "antd";
-
-import "../index.less";
+import ClassNames from "classnames";
+import styles from "../index.less";
 
 const IconFont = Icon.createFromIconfontCN({
   scriptUrl: "//at.alicdn.com/t/font_1250017_o43nqr6728j.js" // 在 iconfont.cn 上生成
@@ -9,9 +9,9 @@ const IconFont = Icon.createFromIconfontCN({
 
 export default function LoadingIcon() {
   return (
-    <div className="container">
-      <Card title="加载中 icons" className="card-wrap block_span">
-        <Row>
+    <div className={ClassNames("container", styles.uiDemos)}>
+      <Card title="加载中 icons" className="card-wrap">
+        <Row className="block_span">
           <Col span={3}>
             <span>
               <Icon type="loading" />

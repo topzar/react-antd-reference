@@ -9,7 +9,8 @@ import {
   message
 } from "antd";
 
-import "./index.less";
+import ClassNames from "classnames";
+import styles from "../index.less";
 
 const keyFlag = "updatable";
 
@@ -76,7 +77,7 @@ export default function Notification() {
   }
 
   return (
-    <div className="container notofication-page-container">
+    <div className={ClassNames("container", styles.uiDemos)}>
       <Card title="自定义样式和 Icon 的通知提示框" className="card-wrap">
         <Button type="primary" onClick={openNotification}>
           显示一个正常提示框

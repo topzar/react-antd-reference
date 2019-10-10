@@ -1,11 +1,11 @@
 import React from "react";
 import { Card, message, Button, Divider, Radio } from "antd";
 
-import "./index.less";
+import "../index.less";
 export default function MessagePage() {
   return (
     <div className="container">
-      <Card title="全局提示" className="card-wrap">
+      <Card title="全局提示">
         <Button type="primary" onClick={e => message.info("这是最普通的提示")}>
           普通提示
         </Button>

@@ -1,11 +1,11 @@
 import React from "react";
 import { Card, Icon } from "antd";
-
-import "./index.less";
+import ClassNames from "classnames";
+import styles from "./index.less";
 
 export default function AntdProHeaderRightIndex() {
   return (
-    <div className=" container antd-pro-header ">
+    <div className={ClassNames("container", styles.demoAntdProHeader)}>
       <Card title="顶部小图标demo">
         <span>
           <Icon type="search" />
