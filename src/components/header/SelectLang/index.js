@@ -5,7 +5,7 @@ import HeaderDropdown from "../HeaderDropDown";
 import classNames from "classnames";
 import { connect } from "react-redux";
 
-import "./index.less";
+import styles from "./index.less";
 import { changeLanguage } from "@store/language/actions";
 
 const locales = ["zh", "en"];
@@ -24,7 +24,7 @@ function SelectLang(props) {
   }
 
   const langMenu = (
-    <Menu className="menu" onClick={changeLang}>
+    <Menu className={styles.menu} onClick={changeLang}>
       {locales.map(locale => (
         <Menu.Item key={locale}>
           <span role="img" aria-label={languageLabels[locale]}>
@@ -37,7 +37,13 @@ function SelectLang(props) {
   );
   return (
     <HeaderDropdown overlay={langMenu} placement="bottomRight">
-      <span className={classNames("action", "dropDown", props.className || "")}>
+      <span
+        className={classNames(
+          styles.action,
+          styles.dropDown,
+          props.className || ""
+        )}
+      >
         <Icon type="global" />
       </span>
     </HeaderDropdown>

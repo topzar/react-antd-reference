@@ -4,7 +4,10 @@ import { connect } from "react-redux";
 
 import storage from "@storage";
 import { loginOut } from "@store/user/actions";
-import "./index.less";
+
+import ClassNames from "classnames";
+
+import styles from "./index.less";
 
 import HeaderDropdown from "../HeaderDropDown";
 
@@ -17,7 +20,7 @@ function AvatarDropdown(props) {
   }
 
   const menuHeaderDropdown = (
-    <Menu className="menu" onClick={handleMenuItemClick}>
+    <Menu className={styles.menu} onClick={handleMenuItemClick}>
       <Menu.Item key="center">
         <Icon type="user" />
         个人中心
@@ -38,14 +41,14 @@ function AvatarDropdown(props) {
 
   return (
     <HeaderDropdown overlay={menuHeaderDropdown}>
-      <span className="action account">
+      <span className={ClassNames(styles.action, styles.account)}>
         <Avatar
-          className="avatar"
+          className={styles.avatar}
           size="small"
           src="https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png"
           alt="avatar"
         />
-        <span className="name">SilvaQ</span>
+        <span className={styles.name}>SilvaQ</span>
       </span>
     </HeaderDropdown>
   );

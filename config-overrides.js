@@ -1,7 +1,6 @@
 const {
   override,
   fixBabelImports,
-  addLessLoader,
   addWebpackAlias,
   addWebpackModuleRule
 } = require("customize-cra");
@@ -36,6 +35,7 @@ module.exports = override(
           // 0 => no loaders (default);
           // 1 => postcss-loader;
           // 2 => postcss-loader, sass-loader
+          // sourceMap: true,
         }
       },
       {
@@ -44,7 +44,7 @@ module.exports = override(
           javascriptEnabled: true,
           // strictMath: true,
           noIeCompat: true,
-          localIdentName: "[local]--[hash:base64:5]" // if you use CSS Modules, and custom `localIdentName`, default is '[local]--[hash:base64:5]'.
+          localIdentName: "[local]--[hash:base64:5]" //"[path][name]__[local]"  product: "[local]--[hash:base64:5]" // if you use CSS Modules, and custom `localIdentName`, default is '[local]--[hash:base64:5]'.
         }
       }
     ]
