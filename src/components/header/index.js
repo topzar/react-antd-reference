@@ -2,7 +2,7 @@ import React from "react";
 import { Icon } from "antd";
 import { connect } from "react-redux";
 
-import "./index.less";
+import styles from "./index.less";
 
 import { collapsedMenu } from "@store/menu/actions";
 import SelectLang from "./SelectLang";
@@ -10,8 +10,8 @@ import AvatarDropDown from "./AvatarDropDown";
 
 function Header(props) {
   return (
-    <div className="global-header">
-      <span className="global-header-trigger">
+    <div className={styles["global-header"]}>
+      <span className={styles["global-header-trigger"]}>
         <Icon
           type={props.collapsed ? "menu-unfold" : "menu-fold"}
           onClick={event => {
@@ -19,8 +19,8 @@ function Header(props) {
           }}
         />
       </span>
-      <div className="global-header-index-right">
-        <div className="antd-pro-header">
+      <div className={styles["global-header-index-right"]}>
+        <div className={styles["antd-pro-header"]}>
           <AvatarDropDown />
           <SelectLang />
         </div>

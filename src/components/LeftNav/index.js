@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import { Menu } from "antd";
-
-import "./index.less";
+import ClassNames from "classnames";
+import styles from "./index.less";
 
 import { menuList, menuConfig } from "@configs/menu";
 
@@ -19,11 +19,11 @@ export default function LeftNav() {
     <div
       className={
         menuConfig.theme === "light"
-          ? ["left-nav", "left-nav-light"].join(" ")
-          : "left-nav"
+          ? ClassNames(styles["left-nav"], styles["left-nav-light"])
+          : styles["left-nav"]
       }
     >
-      <div className="logo" />
+      <div className={styles.logo} />
       <Menu
         theme={menuConfig.theme || "dark"}
         defaultOpenKeys={menuDefaultOpenKeys}

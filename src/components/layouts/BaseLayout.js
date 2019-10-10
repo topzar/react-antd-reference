@@ -3,7 +3,7 @@ import { Layout } from "antd";
 
 import { connect } from "react-redux";
 
-import "./base-layout.less";
+import styles from "./BaseLayout.less";
 
 import LeftNav from "@components/LeftNav";
 import CustomHeader from "@components/Header";
@@ -13,16 +13,21 @@ const { Header, Content, Footer, Sider } = Layout;
 
 function BaseLayout(props) {
   return (
-    <Layout className="top-container">
-      <Sider collapsed={props.collapsed} className="top-container-sider">
+    <Layout className={styles["top-container"]}>
+      <Sider
+        collapsed={props.collapsed}
+        className={styles["top-container-sider"]}
+      >
         <LeftNav />
       </Sider>
-      <Layout className="main-frame">
-        <Header className="main-frame-header">
+      <Layout className={styles["main-frame"]}>
+        <Header className={styles["main-frame-header"]}>
           <CustomHeader />
         </Header>
-        <Content className="main-frame-content">{props.children}</Content>
-        <Footer className="footer">
+        <Content className={styles["main-frame-content"]}>
+          {props.children}
+        </Content>
+        <Footer className={styles["footer"]}>
           <CustomFooter />
         </Footer>
       </Layout>
