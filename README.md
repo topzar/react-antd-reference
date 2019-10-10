@@ -11,6 +11,10 @@
 
 1. 所有变量，方法名用驼峰命名法起名
 
+## 3. 所有 css-modules 引入的名字全用 camelCase 写法编写
+
+    > simple-example_code ->> simpleExampleCode
+
 # 项目依赖指南
 
 > 最新的在顶部

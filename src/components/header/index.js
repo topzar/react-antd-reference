@@ -10,8 +10,8 @@ import AvatarDropDown from "./AvatarDropDown";
 
 function Header(props) {
   return (
-    <div className={styles["global-header"]}>
-      <span className={styles["global-header-trigger"]}>
+    <div className={styles.globalHeader}>
+      <span className={styles.globalHeaderTrigger}>
         <Icon
           type={props.collapsed ? "menu-unfold" : "menu-fold"}
           onClick={event => {
@@ -19,8 +19,8 @@ function Header(props) {
           }}
         />
       </span>
-      <div className={styles["global-header-index-right"]}>
-        <div className={styles["antd-pro-header"]}>
+      <div className={styles.globalHeaderIndexRight}>
+        <div className={styles.antdProHeader}>
           <AvatarDropDown />
           <SelectLang />
         </div>
