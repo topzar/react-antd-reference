@@ -1,5 +1,5 @@
 import { userLogin as userLoginApi } from "@api/user/login";
-import { setUserLoginStatus } from "@utils/user";
+import { setUserLoginStatus, setUserInfo, LOGIN_FLAG_VALUE } from "@utils/user";
 
 export function userLogin(userInfo) {
   const { userName, userPass } = userInfo;
@@ -14,7 +14,9 @@ export function userLogin(userInfo) {
           return false;
         }
         //作登录过的标记
-        setUserLoginStatus("true");
+        setUserLoginStatus(LOGIN_FLAG_VALUE);
+        //记录用户信息
+        setUserInfo(res.data);
 
         resolve(res);
       })
