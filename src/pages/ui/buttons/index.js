@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Card, Button, Icon, Radio } from "antd";
-
-import "../index.less";
+import ClassNames from "classnames";
+import styles from "../index.less";
 
 export default function ButtonsPage() {
   const [loading, setLoading] = useState(true);
@@ -9,7 +9,7 @@ export default function ButtonsPage() {
   const [size, setSize] = useState("default");
 
   return (
-    <div className="container">
+    <div className={ClassNames("container", styles.uiDemos)}>
       <Card title="基础按钮" className="card-wrap">
         <Button type="primary">Primary</Button>
         <Button>Default</Button>

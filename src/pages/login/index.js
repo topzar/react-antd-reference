@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { Card, Form, Button, Input, Spin, Icon, message } from "antd";
 import { connect } from "react-redux";
-
+import ClassNames from "classnames";
 import { loginIn } from "@store/user/actions";
-import storage from "@storage";
-import { userLogin } from "@api/user/login";
+import { userLogin } from "@models/user";
 
-import "./index.less";
+import styles from "./index.less";
 
 function LoginPage(props) {
   const [loading, setLoading] = useState(false);
@@ -34,33 +33,23 @@ function LoginPage(props) {
     validateFields((errors, values) => !errors && submitForm(values));
   }
 
-  function submitForm({ userName, userPass }) {
+  async function submitForm(data) {
     setLoading(true);
-
-    userLogin({ userName, userPass })
-      .then(({ status, data: res }) => {
-        if (res.code !== 0) {
-          message.error(res.message);
-          return false;
-        }
-
-        storage.set("loginStatus", "true");
-        props.doLogin();
-        message.success("登录成功").then(() => {
-          resetFields();
-          history.replace("/home", location.state);
-        });
-      })
-      .catch(err => {
-        message.error(err);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+    try {
+      await userLogin(data);
+      props.doLogin();
+      await message.success("登录成功");
+      resetFields();
+      setLoading(false);
+      history.replace("/home", location.state);
+    } catch (error) {
+      setLoading(false);
+      message.error(error.message);
+    }
   }
 
   return (
-    <div className="container login-page-container">
+    <div className={ClassNames("container", styles.loginPageContainer)}>
       <div className="login-area">
         <Card title="管理系统-管理员登录页">
           <Spin spinning={loading}>

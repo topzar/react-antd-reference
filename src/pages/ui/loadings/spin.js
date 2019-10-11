@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { Card, Icon, Spin, Alert, Switch, Divider } from "antd";
-
-import "../index.less";
+import ClassNames from "classnames";
+import styles from "../index.less";
 
 const anticon = <Icon type="loading" style={{ fontSize: 24 }} spin />;
 
 export default function LoadingButton() {
   const [loading, setLoading] = useState(true);
   return (
-    <div className="container">
+    <div className={ClassNames("container", styles.uiDemos)}>
       <Card title="加载控制器" className="card-wrap">
         <div style={{ marginTop: 16 }}>
           tonggle Loading state：

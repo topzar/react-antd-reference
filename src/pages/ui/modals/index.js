@@ -9,8 +9,11 @@ import {
   Divider,
   Radio
 } from "antd";
+import ClassNames from "classnames";
 
 import ModalInsideDemo from "@pages/UI/Modals/InModalDemo";
+
+import styles from "../index.less";
 
 export default function ModalsPage() {
   const [showModal, setShowModal] = useState(false);
@@ -49,7 +52,7 @@ export default function ModalsPage() {
   }
 
   return (
-    <div className="container">
+    <div className={ClassNames("container", styles.uiDemos)}>
       <Card className="card-wrap" title="基础 Modals">
         <Button type="primary" onClick={toggleModal.bind(this, "normal")}>
           普通弹框

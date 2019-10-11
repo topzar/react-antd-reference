@@ -3,12 +3,16 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { connect } from "react-redux";
 
 import Routes from "@routes";
-import { loginIn, loginOut } from "./store/user/actions";
-import storage from "@storage";
+import { loginIn } from "./store/user/actions";
+import { isLogin } from "@utils/user";
+
 import "./App.less";
 
 function App(props) {
-  props.lastLoginStatus();
+  const { lastLoginStatus } = props;
+
+  lastLoginStatus();
+
   return (
     <div className="App">
       <Router>
@@ -21,14 +25,17 @@ function App(props) {
 const mapDispatchToProps = {
   lastLoginStatus: () => {
     return (dispatch, getState) => {
-      if (storage.get("loginStatus") === "true") {
-        dispatch(loginIn());
-      } else {
-        dispatch(loginOut());
-      }
+      const loginStatus = getState()
+        .get("user")
+        .get("loginStatus");
+
+      if (loginStatus) return; //不需要重新出发登录、退出
+      //重新标记为登录
+      isLogin() && dispatch(loginIn());
     };
   }
 };
+
 export default connect(
   null,
   mapDispatchToProps

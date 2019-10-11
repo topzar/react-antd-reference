@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Button, Card, Icon, Divider } from "antd";
-
-import "../index.less";
+import ClassNames from "classnames";
+import styles from "../index.less";
 
 export default function LoadingButton() {
   const [loading, setLoading] = useState(true);
   return (
-    <div className="container">
+    <div className={ClassNames("container", styles.uiDemos)}>
       <Card title="加载中按钮" className="card-wrap">
         <Button
           type="primary"

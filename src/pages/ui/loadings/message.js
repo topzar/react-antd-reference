@@ -1,7 +1,8 @@
 import React from "react";
 import { Card, message, Button } from "antd";
 
-import "../index.less";
+import ClassNames from "classnames";
+import styles from "../index.less";
 
 export default function LoadingButton() {
   function success() {
@@ -17,7 +18,7 @@ export default function LoadingButton() {
   }
 
   return (
-    <div className="container">
+    <div className={ClassNames("container", styles.uiDemos)}>
       {/* <Card title="加载控制器" className="card-wrap">
         <div style={{ marginTop: 16 }}>
           tonggle Loading state：
