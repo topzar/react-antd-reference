@@ -7,9 +7,22 @@ export const menuList = [
     icon: "home"
   },
   {
+    title: "项目管理",
+    key: "/home/project",
+    is_open: true,
+    icon: "project",
+    children: [
+      {
+        title: "项目列表",
+        key: "/home/project/list",
+        icon: "unordered-list"
+      }
+    ]
+  },
+  {
     title: "UI",
     key: "/home/ui",
-    is_open: true,
+    is_open: false,
     icon: "compass",
     children: [
       {
@@ -21,7 +34,7 @@ export const menuList = [
         title: "Loading",
         key: "/home/ui/loadings",
         icon: "loading-3-quarters",
-        is_open: true,
+        is_open: false,
         children: [
           {
             title: "icon 加载中",
@@ -87,7 +100,7 @@ export const menuList = [
   {
     title: "Demo",
     key: "/home/demo",
-    is_open: true,
+    is_open: false,
     icon: "smile",
     children: [
       {

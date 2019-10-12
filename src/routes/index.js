@@ -33,6 +33,9 @@ import GridLayoutPage from "@pages/Demo/DemoGridLayout";
 
 import AntdProHeaderRightIndex from "@pages/Demo/AntdProHeader";
 
+//project
+import ProjectListPage from "@pages/Project/ListPage";
+
 // 引导用户到/home下
 function Guard() {
   return <Redirect push to="/home" />;
@@ -44,6 +47,12 @@ function MainFrame({ match }) {
     <HomePage>
       <Switch>
         <Route exact path={`${match.path}`} component={HomeDefault} />
+        {/* project */}
+        <Route
+          path={`${match.path}/project/list`}
+          component={ProjectListPage}
+        />
+        {/* ui */}
         <Route path={`${match.path}/ui/buttons`} component={ButtonsPage} />
         <Route
           path={`${match.path}/ui/loadings/icon`}

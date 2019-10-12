@@ -31,7 +31,7 @@ if (!fs.existsSync(path.resolve(__dirname, "jsconfig.json"))) {
   const aliasList = {};
   Object.keys(alias).forEach(item => {
     const isDirectory = fs.lstatSync(alias[item]).isDirectory();
-    const key = `${item}/*`;
+    const key = isDirectory ? `${item}/*` : item;
     const value = path.relative(path.resolve(__dirname, "src"), alias[item]);
     aliasList[key] = [isDirectory ? value + "/*" : value];
   });
