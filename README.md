@@ -36,6 +36,12 @@
 
     > simple-example_code ->> simpleExampleCode
 
+### git commit 提交规范
+
+> vscode 插件 : vsc-commitizen
+
+[阮一峰的指南文档](http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html)
+
 ## 项目依赖指南
 
 > 最新的在顶部
