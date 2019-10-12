@@ -1,6 +1,7 @@
 # react-antd-reference
 
 基于 react+antd+react-router+redux 搭建的，项目常用组件封装的项目，有利于快速拷贝过去使用
+a
 
 > 项目进度和计划情况需要查看 issue 区。
 
@@ -41,6 +42,12 @@
 > vscode 插件 : vsc-commitizen
 
 [阮一峰的指南文档](http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html)
+
+> yarn add -g commitizen
+>
+> commitizen init cz-conventional-changelog --yarn --dev --exact
+>
+> 提交代码用 git cz 来替代 git commit
 
 ## 项目依赖指南
 
