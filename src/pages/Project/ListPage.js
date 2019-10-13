@@ -1,5 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Card, Table, message, Divider, Button, Form } from "antd";
+import {
+  Card,
+  Table,
+  message,
+  Divider,
+  Button,
+  Form,
+  Input,
+  Row,
+  Col
+} from "antd";
 
 import { projectList } from "@api/project";
 
@@ -7,13 +17,16 @@ function ListPage(props) {
   const [tableDataLoading, setTableDataLoading] = useState(true);
   const [tableData, setTableData] = useState([]);
   const [tableSelectedPage, setTableSelectedPage] = useState(1);
+  const [formData, setFormData] = useState({});
+
+  const { resetFields, getFieldDecorator, validateFields } = props.form;
 
   useEffect(() => {
     setTableDataLoading(true);
-    projectList()
+    projectList(formData)
       .then(({ data: res }) => {
         if (res.code !== 0) {
-          message.error("回去数据失败");
+          message.error("获取数据失败");
           return false;
         }
         setTableData(res.data);
@@ -21,7 +34,7 @@ function ListPage(props) {
       })
       .catch(err => console.log("变量信息->: ListPage -> err", err))
       .finally(() => setTableDataLoading(false));
-  }, [tableSelectedPage]);
+  }, [formData, tableSelectedPage]);
 
   const columns = [
     {
@@ -75,9 +88,49 @@ function ListPage(props) {
     })
   };
 
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    validateFields((error, values) => {
+      console.log("变量信息->: handleFormSubmit -> values", values);
+      if (!error) {
+        setFormData(values);
+      }
+    });
+  }
+
   return (
     <div className="container project-list-page">
       <Card>
+        <Form layout="inline" onSubmit={handleFormSubmit}>
+          <Row>
+            <Col>
+              <Form.Item label="项目名">
+                {getFieldDecorator("project_name", {
+                  rules: [
+                    {
+                      required: true,
+                      message: "项目名必能为空哟"
+                    }
+                  ]
+                })(<Input placeholder="按项目名查询" />)}
+              </Form.Item>
+              <Form.Item label="代号">
+                {getFieldDecorator("project_code")(
+                  <Input placeholder="按项目代号查询" />
+                )}
+              </Form.Item>
+              <Form.Item>
+                <Button type="primary" htmlType="submit">
+                  搜索
+                </Button>
+                <Button style={{ marginLeft: 8 }} onClick={e => resetFields()}>
+                  重置
+                </Button>
+              </Form.Item>
+            </Col>
+            <Col style={{ textAlign: "right" }}></Col>
+          </Row>
+        </Form>
         <Divider />
         <Table
           size="middle"
