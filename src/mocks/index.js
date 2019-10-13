@@ -38,7 +38,6 @@ const customMock = new CustomizedMock({
 });
 
 // 用户
-// Mock.mock(new RegExp("/api/user/login"), "post", userLogin);
 customMock.mock("/api/user/login", "post", userLogin);
 // 项目
 customMock.mock("/api/project/list", "post", projectList);
