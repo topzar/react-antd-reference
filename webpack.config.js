@@ -2,7 +2,8 @@
 //真正的别名配置在 config-overrides.js下
 //vs code 上使用了插件 Jump To Alias File
 const path = require("path");
-module.exports = {
+const fs = require("fs");
+const config = {
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
@@ -22,3 +23,30 @@ module.exports = {
     }
   }
 };
+
+//如果没有vscode 的jsconfig.json ，那么按照alias 生成一个jsconfig.json
+if (!fs.existsSync(path.resolve(__dirname, "jsconfig.json"))) {
+  const alias = config.resolve.alias;
+  //吧alias 转化成jsConfig.json 中的paths参数的样
+  const aliasList = {};
+  Object.keys(alias).forEach(item => {
+    const isDirectory = fs.lstatSync(alias[item]).isDirectory();
+    const key = isDirectory ? `${item}/*` : item;
+    const value = path.relative(path.resolve(__dirname, "src"), alias[item]);
+    aliasList[key] = [isDirectory ? value + "/*" : value];
+  });
+
+  const jsConfig = {
+    compilerOptions: {
+      emitDecoratorMetadata: true,
+      experimentalDecorators: true,
+      baseUrl: "src",
+      paths: {}
+    }
+  };
+  jsConfig.compilerOptions.paths = aliasList;
+
+  fs.writeFileSync("jsconfig.json", JSON.stringify(jsConfig));
+}
+
+module.exports = config;

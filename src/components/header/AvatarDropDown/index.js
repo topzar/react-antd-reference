@@ -1,21 +1,28 @@
 import React from "react";
 import { Avatar, Icon, Menu } from "antd";
 import { connect } from "react-redux";
-
-import storage from "@storage";
-import { loginOut } from "@store/user/actions";
-
 import ClassNames from "classnames";
-
-import styles from "./index.less";
 
 import HeaderDropdown from "../HeaderDropDown";
 
+import storage from "@storage";
+import { loginOut } from "@store/user/actions";
+import styles from "./index.less";
+
+import { getUserInfo } from "@utils/user";
+
 function AvatarDropdown(props) {
+  const { user } = getUserInfo();
+
   function handleMenuItemClick({ key }) {
-    if (key === "logout") {
-      storage.remove("loginStatus");
-      props.userLogout();
+    switch (key) {
+      case "logout":
+        storage.clear();
+        props.userLogout();
+        break;
+
+      default:
+        break;
     }
   }
 
@@ -48,7 +55,7 @@ function AvatarDropdown(props) {
           src="https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png"
           alt="avatar"
         />
-        <span className={styles.name}>SilvaQ</span>
+        <span className={styles.name}>{user}</span>
       </span>
     </HeaderDropdown>
   );
