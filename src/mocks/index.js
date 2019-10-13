@@ -4,7 +4,6 @@ import { projectList } from "@mocks/project";
 
 class CustomizedMock {
   constructor(setupConfigs = {}) {
-    // 配置Ajax请求延时，可用来测试网络延迟大时项目中一些效果
     Mock.setup(setupConfigs);
     this.mockList = {};
 
