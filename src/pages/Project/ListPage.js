@@ -8,16 +8,20 @@ import {
   Form,
   Input,
   Row,
-  Col
+  Col,
+  Modal
 } from "antd";
 
 import { projectList } from "@api/project";
+
+import AddProject from "./AddProject";
 
 function ListPage(props) {
   const [tableDataLoading, setTableDataLoading] = useState(true);
   const [tableData, setTableData] = useState([]);
   const [tableSelectedPage, setTableSelectedPage] = useState(1);
   const [formData, setFormData] = useState({});
+  const [visibleAddProject, setVisibleAddProject] = useState(false);
 
   const { resetFields, getFieldDecorator, validateFields } = props.form;
 
@@ -98,6 +102,18 @@ function ListPage(props) {
     });
   }
 
+  function handleAddBtnClick(event) {
+    setVisibleAddProject(true);
+  }
+
+  function onAddProjectFinish() {
+    setVisibleAddProject(false);
+    message.success("新增项目成功");
+  }
+  function handleCancleAddProject(event) {
+    setVisibleAddProject(false);
+  }
+
   return (
     <div className="container project-list-page">
       <Card>
@@ -128,10 +144,14 @@ function ListPage(props) {
                 </Button>
               </Form.Item>
             </Col>
-            <Col style={{ textAlign: "right" }}></Col>
+            <Divider style={{ margin: "10px 0px" }} />
+            <Col style={{ textAlign: "left", marginBottom: "10px" }}>
+              <Button type="primary" onClick={handleAddBtnClick}>
+                新增
+              </Button>
+            </Col>
           </Row>
         </Form>
-        <Divider />
         <Table
           size="middle"
           rowSelection={rowSelection}
@@ -146,6 +166,15 @@ function ListPage(props) {
           }}
         />
       </Card>
+      <Modal
+        title="新增项目"
+        visible={visibleAddProject}
+        footer={null}
+        onCancel={handleCancleAddProject}
+        maskClosable={false}
+      >
+        <AddProject onFinish={onAddProjectFinish} />
+      </Modal>
     </div>
   );
 }
